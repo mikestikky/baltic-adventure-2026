@@ -1,0 +1,198 @@
+{
+  "city_helsinki": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Senate_Square_-_Senaatintori_-_Senatstorget%2C_Helsinki%2C_Finland.jpg/1280px-Senate_Square_-_Senaatintori_-_Senatstorget%2C_Helsinki%2C_Finland.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Senate_Square_-_Senaatintori_-_Senatstorget,_Helsinki,_Finland.jpg",
+    "credit": "Matti Mattila",
+    "license": "CC BY 2.0",
+    "filename": "File:Senate Square - Senaatintori - Senatstorget, Helsinki, Finland.jpg"
+  },
+  "city_tallinn": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Old_car_and_old_city.jpg/1280px-Old_car_and_old_city.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Old_car_and_old_city.jpg",
+    "credit": "Maasaak",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Old car and old city.jpg"
+  },
+  "city_riga": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Panorama_of_Riga%2C_1572_%28v2%29.jpg/1280px-Panorama_of_Riga%2C_1572_%28v2%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Riga,_1572_(v2).jpg",
+    "credit": "1581 Braun &amp; Hogenberg: of \"Civitates Orbis Terrarum.\"",
+    "license": "Public domain",
+    "filename": "File:Panorama of Riga, 1572 (v2).jpg"
+  },
+  "city_vilnius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Panorama_of_the_Vilnius_Old_Town%2C_1944.jpg/1280px-Panorama_of_the_Vilnius_Old_Town%2C_1944.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_the_Vilnius_Old_Town,_1944.jpg",
+    "credit": "Jan Bułhak",
+    "license": "Public domain",
+    "filename": "File:Panorama of the Vilnius Old Town, 1944.jpg"
+  },
+  "tallinn_st_catherine": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pasaje_de_Santa_Catarina%2C_Tallin%2C_Estonia%2C_2012-08-05%2C_DD_01.JPG/1280px-Pasaje_de_Santa_Catarina%2C_Tallin%2C_Estonia%2C_2012-08-05%2C_DD_01.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Pasaje_de_Santa_Catarina,_Tallin,_Estonia,_2012-08-05,_DD_01.JPG",
+    "credit": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Pasaje de Santa Catarina, Tallin, Estonia, 2012-08-05, DD 01.JPG"
+  },
+  "tallinn_town_hall": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Tallinn_-_Town_Hall_Square_%28Raekoja_plats%29.jpg/1280px-Tallinn_-_Town_Hall_Square_%28Raekoja_plats%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tallinn_-_Town_Hall_Square_(Raekoja_plats).jpg",
+    "credit": "Pudelek (Marcin Szala)",
+    "license": "CC BY-SA 3.0 ee",
+    "filename": "File:Tallinn - Town Hall Square (Raekoja plats).jpg"
+  },
+  "tallinn_viewpoint": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/View_of_Tallinn_old_town_1.jpg/1280px-View_of_Tallinn_old_town_1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_of_Tallinn_old_town_1.jpg",
+    "credit": "kallerna",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:View of Tallinn old town 1.jpg"
+  },
+  "tallinn_pikk": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Tallinn.-_26_Pikk_House_of_the_Brotherhood_of_Black_Heads_%281%29.JPG/1280px-Tallinn.-_26_Pikk_House_of_the_Brotherhood_of_Black_Heads_%281%29.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Tallinn.-_26_Pikk_House_of_the_Brotherhood_of_Black_Heads_(1).JPG",
+    "credit": "Pierre André Leclercq",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Tallinn.- 26 Pikk House of the Brotherhood of Black Heads (1).JPG"
+  },
+  "riga_alberta": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Alberta_iel%C4%81_12_20120728-05.JPG/1280px-Alberta_iel%C4%81_12_20120728-05.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Alberta_iel%C4%81_12_20120728-05.JPG",
+    "credit": "Hans A. Rosbach",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Alberta ielā 12 20120728-05.JPG"
+  },
+  "riga_blackheads": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/House_of_Blackheads_and_St._Peter%27s_Church_Tower%2C_Riga%2C_Latvia_-_Diliff.jpg/1280px-House_of_Blackheads_and_St._Peter%27s_Church_Tower%2C_Riga%2C_Latvia_-_Diliff.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:House_of_Blackheads_and_St._Peter%27s_Church_Tower,_Riga,_Latvia_-_Diliff.jpg",
+    "credit": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:House of Blackheads and St. Peter's Church Tower, Riga, Latvia - Diliff.jpg"
+  },
+  "vilnius_pilies": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Pilies_Street_at_dusk%2C_Vilnius%2C_Lithuania_-_Diliff.jpg/1280px-Pilies_Street_at_dusk%2C_Vilnius%2C_Lithuania_-_Diliff.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pilies_Street_at_dusk,_Vilnius,_Lithuania_-_Diliff.jpg",
+    "credit": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Pilies Street at dusk, Vilnius, Lithuania - Diliff.jpg"
+  },
+  "vilnius_uzupis": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Prie_Men%C5%B3_inkubatoriaus.jpg/1280px-Prie_Men%C5%B3_inkubatoriaus.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Prie_Men%C5%B3_inkubatoriaus.jpg",
+    "credit": "Stela",
+    "license": "CC0",
+    "filename": "File:Prie Menų inkubatoriaus.jpg"
+  },
+  "vilnius_cathedral": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/VilniusCathedral_square_2014.jpg/1280px-VilniusCathedral_square_2014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:VilniusCathedral_square_2014.jpg",
+    "credit": "Abrget47j",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:VilniusCathedral square 2014.jpg"
+  },
+  "vilnius_gediminas": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Vilnius_Modern_Skyline_At_Dusk%2C_Lithuania_-_Diliff.jpg/1280px-Vilnius_Modern_Skyline_At_Dusk%2C_Lithuania_-_Diliff.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Vilnius_Modern_Skyline_At_Dusk,_Lithuania_-_Diliff.jpg",
+    "credit": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Vilnius Modern Skyline At Dusk, Lithuania - Diliff.jpg"
+  },
+  "helsinki_market": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Buildings_near_Kauppatori_and_Helsinki_Cathedral_20100825_1.jpg/1280px-Buildings_near_Kauppatori_and_Helsinki_Cathedral_20100825_1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Buildings_near_Kauppatori_and_Helsinki_Cathedral_20100825_1.jpg",
+    "credit": "DXR",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Buildings near Kauppatori and Helsinki Cathedral 20100825 1.jpg"
+  },
+  "helsinki_esplanadi": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Espan_puisto_2025-7_-_Marit_Henriksson.jpg/1280px-Espan_puisto_2025-7_-_Marit_Henriksson.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Espan_puisto_2025-7_-_Marit_Henriksson.jpg",
+    "credit": "Marit Henriksson",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Espan puisto 2025-7 - Marit Henriksson.jpg"
+  },
+  "castle_turaida": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Turaida_Castle.JPG/1280px-Turaida_Castle.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Turaida_Castle.JPG",
+    "credit": "Pudelek (Marcin Szala)",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Turaida Castle.JPG"
+  },
+  "castle_sigulda": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/The_new_Sigulda_castle_%282%29.JPG/1280px-The_new_Sigulda_castle_%282%29.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:The_new_Sigulda_castle_(2).JPG",
+    "credit": "PIERRE ANDRE LECLERCQ",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:The new Sigulda castle (2).JPG"
+  },
+  "castle_gauja": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Gauja_River.jpg/1280px-Gauja_River.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gauja_River.jpg",
+    "credit": "VolodyaVoronin",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Gauja River.jpg"
+  },
+  "castle_cesis": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Cesis_Castle_2014-12-27_%282%29.jpg/1280px-Cesis_Castle_2014-12-27_%282%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cesis_Castle_2014-12-27_(2).jpg",
+    "credit": "Voll",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Cesis Castle 2014-12-27 (2).jpg"
+  },
+  "castle_hillofcrosses": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Kry%C5%BEi%C5%B3_kalnas_%28G%C3%B3ra_Krzy%C5%BCy%29.JPG/1280px-Kry%C5%BEi%C5%B3_kalnas_%28G%C3%B3ra_Krzy%C5%BCy%29.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Kry%C5%BEi%C5%B3_kalnas_(G%C3%B3ra_Krzy%C5%BCy).JPG",
+    "credit": "Pudelek (Marcin Szala)",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Kryžių kalnas (Góra Krzyży).JPG"
+  },
+  "castle_trakai": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Trakai-Troki.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Trakai-Troki.jpg",
+    "credit": "Julo",
+    "license": "CC BY-SA 3.0",
+    "filename": "File:Trakai-Troki.jpg"
+  },
+  "hotel_telegraaf": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Hotel_Telegraaf_-_panoramio.jpg/1280px-Hotel_Telegraaf_-_panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hotel_Telegraaf_-_panoramio.jpg",
+    "credit": "Henrik Heino",
+    "license": "CC BY 3.0",
+    "filename": "File:Hotel Telegraaf - panoramio.jpg"
+  },
+  "hotel_grandpalace": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Riga_-_Grand_Palace_Hotel_-_panoramio.jpg/1280px-Riga_-_Grand_Palace_Hotel_-_panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Riga_-_Grand_Palace_Hotel_-_panoramio.jpg",
+    "credit": "giggel",
+    "license": "CC BY 3.0",
+    "filename": "File:Riga - Grand Palace Hotel - panoramio.jpg"
+  },
+  "hotel_pacai": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Hotel_PACAI_in_Vilnius_%28Christmas%2C_2019%29.jpg/1280px-Hotel_PACAI_in_Vilnius_%28Christmas%2C_2019%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hotel_PACAI_in_Vilnius_(Christmas,_2019).jpg",
+    "credit": "Pofka",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Hotel PACAI in Vilnius (Christmas, 2019).jpg"
+  },
+  "hotel_lilla": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Hotel_Lilla_Roberts.jpg/1280px-Hotel_Lilla_Roberts.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hotel_Lilla_Roberts.jpg",
+    "credit": "Vadelmavene",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Hotel Lilla Roberts.jpg"
+  },
+  "rest_maiasmokk": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Tallinn_kohvik_Maiasmokk.jpg/1280px-Tallinn_kohvik_Maiasmokk.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tallinn_kohvik_Maiasmokk.jpg",
+    "credit": "Liilia Moroz",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Tallinn kohvik Maiasmokk.jpg"
+  },
+  "rest_oldehansa": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Olde_Hansa%2C_2006_%2801%29.jpg/1280px-Olde_Hansa%2C_2006_%2801%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Olde_Hansa,_2006_(01).jpg",
+    "credit": "Bahnfrend",
+    "license": "CC BY-SA 4.0",
+    "filename": "File:Olde Hansa, 2006 (01).jpg"
+  }
+}

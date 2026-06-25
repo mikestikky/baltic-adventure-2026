@@ -33,9 +33,33 @@ USB stick, or in a cloud drive and it still works with no internet.
 
 ## Editing the guide
 
-All trip content lives in one place: **`data.js`** (the object `window.TRIP`).
-Change a hotel cost, add a restaurant, tick an open item to `done`, add a day —
-edit `data.js` and reload the page. No rebuild needed.
+`data.js` (the object `window.TRIP`) is what the site reads — it is **generated**
+by `assemble.py`. To change content, edit the source and rebuild:
+
+```
+cd BalticAdventure2026
+python assemble.py        # rebuilds data.js + data/trip.json
+```
+
+- **Facts, daily schedules, Michael/Grace/Together notes, packing** → edit the
+  dictionaries near the top of `assemble.py`, then re-run it.
+- **Photos** → edit the query list in `fetch_photos.py`, run `python fetch_photos.py`
+  (pulls verified, credited Wikimedia Commons images into `data/photos.json`),
+  then `python assemble.py` to fold them in.
+- Quick one-off tweak with no Python? You can also edit `data.js` directly and
+  reload — just know the next `assemble.py` run will overwrite it.
+
+### Photos & maps
+- Photos are real, license-clean **Wikimedia Commons** images (with credit shown).
+  They load over the internet; offline they're hidden gracefully.
+- Maps are **tap-to-load** (keeps the page fast on mobile/metered data). The
+  "Open in Google Maps" and "Directions" links always work.
+
+### Interactive bits (saved on the device, in the browser)
+- Open-items: check one to mark it **resolved** — critical items then drop out of
+  the red boxes and the master summary.
+- Restaurant **Michael/Grace star scores**, the **budget actuals**, and all
+  **checklists** persist in the browser's local storage.
 
 Structure of `data.js`:
 
@@ -71,10 +95,13 @@ python build_trip_json.py
 BalticAdventure2026/
 ├── index.html          # the guide (open this)
 ├── styles.css          # concierge styling + print stylesheet
-├── app.js              # renders the data-driven sections + search/filter
-├── data.js             # ← edit trip content here (window.TRIP)
+├── app.js              # render layer: photos, maps, schedules, scores, budget…
+├── data.js             # GENERATED trip data (window.TRIP) — built by assemble.py
+├── assemble.py         # ← edit facts/schedules/notes/packing here, then run it
+├── fetch_photos.py     # pulls verified Wikimedia photos → data/photos.json
 ├── data/trip.json      # pure-JSON mirror of the data
-├── build_trip_json.py  # regenerate trip.json from data.js
+├── data/photos.json    # verified photo URLs + credits
+├── build_trip_json.py  # (legacy) regenerate trip.json from data.js
 └── README.md
 ```
 
