@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baltic Adventure 2026 — Michael & Grace</title>
+<meta name="description" content="Michael & Grace's complete Baltic travel guide — Helsinki, Tallinn, Riga, Vilnius. July 8–19, 2026.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav no-print">
+  <div class="nav-inner">
+    <span class="brand">Baltic&nbsp;2026</span>
+    <a href="#summary">Summary</a>
+    <a href="#dashboard">Bookings</a>
+    <a href="#open">Open&nbsp;Items</a>
+    <a href="#route">Route</a>
+    <a href="#itinerary">Day&nbsp;by&nbsp;Day</a>
+    <a href="#hotels">Hotels</a>
+    <a href="#transport">Transport</a>
+    <a href="#walks">Stumble&nbsp;Walks</a>
+    <a href="#food">Food</a>
+    <a href="#castles">Castles</a>
+    <a href="#budget">Budget</a>
+    <a href="#practical">Practical</a>
+    <a href="#checklists">Checklists</a>
+    <a href="#journal">Journal</a>
+    <button class="printbtn" onclick="window.print()">🖨 Print / Save PDF</button>
+  </div>
+</nav>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="compass">✦</div>
+  <div class="kicker">A private travel guide</div>
+  <h1>Baltic Adventure 2026</h1>
+  <div class="sub">Michael &amp; Grace's Complete Travel Guide</div>
+  <div class="dates">July 8–19, 2026</div>
+  <div class="route-chip">
+    <span>Helsinki</span><span>Tallinn</span><span>Riga</span><span>Vilnius</span>
+  </div>
+  <p class="theme">Hidden rooms, medieval streets, grand hotels, candlelit cellars,
+     castles, and Baltic countryside — a trip built for wandering and stumbling into beauty.</p>
+</header>
+
+<main>
+
+<!-- ============ MASTER SUMMARY ============ -->
+<section id="summary">
+  <div class="section-eyebrow">Start here</div>
+  <h2>One-page master summary</h2>
+  <p class="lede">Everything that's locked, everything that isn't, on a single screen.</p>
+  <hr class="rule">
+  <div id="summary-cards" class="grid cols-2"></div>
+
+  <div id="summary-mustfix"></div>
+</section>
+
+<!-- ============ RESERVATION DASHBOARD ============ -->
+<section id="dashboard" class="section-print-break">
+  <div class="section-eyebrow">Confirmed</div>
+  <h2>Reservation dashboard</h2>
+  <p class="lede">Every confirmed booking with its number, cost, and status. Tap a vendor to open its site; tap 📍 to open in Maps.</p>
+  <hr class="rule">
+  <div id="dashboard-table"></div>
+  <p><small>Confirmation numbers and costs are taken directly from Michael &amp; Grace's tickets and confirmations. Anything marked <em>recommendation</em> elsewhere in this guide is a suggestion, not a booking.</small></p>
+</section>
+
+<!-- ============ OPEN ITEMS ============ -->
+<section id="open" class="section-print-break">
+  <div class="section-eyebrow">Before you go</div>
+  <h2>Open items &amp; action checklist</h2>
+  <p class="lede">Fix these before departure. The top three are the ones that can actually break the trip.</p>
+  <hr class="rule">
+  <div id="open-redbox"></div>
+  <div id="open-list"></div>
+</section>
+
+<!-- ============ ROUTE MAP ============ -->
+<section id="route" class="section-print-break">
+  <div class="section-eyebrow">The shape of the trip</div>
+  <h2>Route map</h2>
+  <p class="lede">SLC → Paris → Helsinki → Tallinn → Riga → Latvian &amp; Lithuanian countryside → Vilnius → Amsterdam → home.</p>
+  <hr class="rule">
+  <div class="routemap">
+    <svg viewBox="0 0 900 360" role="img" aria-label="Baltic Adventure route diagram">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#a9802f"/>
+        </marker>
+        <style>
+          .seg{stroke:#caa45a;stroke-width:2.5;fill:none}
+          .seg.air{stroke-dasharray:7 5}
+          .seg.ground{stroke:#3f5e57}
+          .stop circle{fill:#fffdf8;stroke:#a9802f;stroke-width:2.5}
+          .stop.major circle{fill:#a9802f}
+          .lbl{font:600 14px Georgia,serif;fill:#2b2620}
+          .sub{font:11px system-ui,sans-serif;fill:#5c5448}
+          .leg{font:italic 11px Georgia,serif;fill:#6e8a82}
+        </style>
+      </defs>
+
+      <!-- air: SLC -> CDG -> HEL -->
+      <path class="seg air" d="M60,70 C140,40 200,40 250,70" marker-end="url(#arrow)"/>
+      <path class="seg air" d="M250,70 C320,100 360,100 420,80" marker-end="url(#arrow)"/>
+      <!-- HEL -> Tallinn ferry -->
+      <path class="seg ground" d="M420,80 C470,120 470,150 460,185" marker-end="url(#arrow)"/>
+      <!-- Tallinn -> Riga bus -->
+      <path class="seg ground" d="M460,200 C430,250 400,250 360,265" marker-end="url(#arrow)"/>
+      <!-- Riga -> countryside -> Vilnius (car) -->
+      <path class="seg ground" d="M345,275 C420,300 520,300 600,278" marker-end="url(#arrow)"/>
+      <!-- Vilnius -> AMS -> SLC (air) -->
+      <path class="seg air" d="M640,265 C720,230 760,160 780,110" marker-end="url(#arrow)"/>
+      <path class="seg air" d="M790,95 C840,70 860,60 860,50" marker-end="url(#arrow)"/>
+
+      <!-- stops -->
+      <g class="stop"><circle cx="60" cy="70" r="6"/><text class="lbl" x="60" y="48" text-anchor="middle">SLC</text><text class="sub" x="60" y="92" text-anchor="middle">Jul 8</text></g>
+      <g class="stop"><circle cx="250" cy="70" r="6"/><text class="lbl" x="250" y="48" text-anchor="middle">Paris CDG</text><text class="sub" x="250" y="92" text-anchor="middle">Jul 9 transit</text></g>
+      <g class="stop major"><circle cx="420" cy="80" r="7"/><text class="lbl" x="420" y="58" text-anchor="middle">Helsinki</text><text class="sub" x="420" y="100" text-anchor="middle">Jul 9–10</text></g>
+      <g class="stop major"><circle cx="460" cy="192" r="7"/><text class="lbl" x="490" y="190" text-anchor="start">Tallinn</text><text class="sub" x="490" y="206" text-anchor="start">Jul 10–14</text></g>
+      <g class="stop major"><circle cx="350" cy="270" r="7"/><text class="lbl" x="340" y="258" text-anchor="end">Riga</text><text class="sub" x="340" y="274" text-anchor="end">Jul 14–17</text></g>
+      <g class="stop"><circle cx="470" cy="290" r="5"/><text class="sub" x="455" y="312" text-anchor="middle">Sigulda · Turaida · Cēsis</text></g>
+      <g class="stop"><circle cx="565" cy="292" r="5"/><text class="sub" x="585" y="330" text-anchor="middle">Hill of Crosses</text></g>
+      <g class="stop major"><circle cx="620" cy="272" r="7"/><text class="lbl" x="620" y="252" text-anchor="middle">Vilnius</text><text class="sub" x="620" y="252" text-anchor="middle" dy="-14">Jul 17–19</text><text class="sub" x="640" y="290" text-anchor="start">+ Trakai</text></g>
+      <g class="stop"><circle cx="790" cy="95" r="6"/><text class="lbl" x="790" y="73" text-anchor="middle">Amsterdam</text><text class="sub" x="790" y="117" text-anchor="middle">Jul 19 transit</text></g>
+      <g class="stop"><circle cx="860" cy="50" r="6"/><text class="lbl" x="860" y="30" text-anchor="middle">SLC</text><text class="sub" x="860" y="72" text-anchor="middle">Jul 19 home</text></g>
+
+      <!-- leg labels -->
+      <text class="leg" x="335" y="120">✈ fly</text>
+      <text class="leg" x="430" y="150">⛴ ferry</text>
+      <text class="leg" x="395" y="245">🚌 bus</text>
+      <text class="leg" x="480" y="270">🚗 drive</text>
+    </svg>
+  </div>
+  <div id="route-cards" class="grid cols-2"></div>
+</section>
+
+<!-- ============ DAY BY DAY ============ -->
+<section id="itinerary" class="section-print-break">
+  <div class="section-eyebrow">The journey</div>
+  <h2>Day-by-day itinerary</h2>
+  <p class="lede">Twelve days. Plenty of structure where it helps, deliberate empty space where it doesn't.</p>
+  <hr class="rule">
+  <div id="days"></div>
+</section>
+
+<!-- ============ HOTELS ============ -->
+<section id="hotels" class="section-print-break">
+  <div class="section-eyebrow">Where you sleep</div>
+  <h2>Hotels</h2>
+  <p class="lede">Four rooms to come home to — each with its confirmation, why it was chosen, and what's around it.</p>
+  <hr class="rule">
+  <div id="hotel-cards"></div>
+</section>
+
+<!-- ============ TRANSPORT ============ -->
+<section id="transport" class="section-print-break">
+  <div class="section-eyebrow">Getting around</div>
+  <h2>Transportation</h2>
+  <p class="lede">Flights, ferry, bus, and the rental car — with what to book and what to verify.</p>
+  <hr class="rule">
+  <h3>Flights</h3>
+  <div id="flights-table"></div>
+  <h3>Ground legs</h3>
+  <div id="transport-table"></div>
+  <div id="car-card"></div>
+  <div class="card tight">
+    <h4>Driving notes — Latvia &amp; Lithuania</h4>
+    <ul>
+      <li><b>Side / rules:</b> Drive on the right. Headlights on at all times (low beam, day and night) — required in both countries.</li>
+      <li><b>Documents:</b> Carry passport, driving licence, the rental agreement, and proof of insurance in the car.</li>
+      <li><b>Tolls / vignette:</b> No motorway vignette needed for cars in Latvia or Lithuania (unlike some EU states) — but confirm with EconomyBookings at pickup.</li>
+      <li><b>Border:</b> Latvia → Lithuania is a Schengen internal border — no stop, no checkpoint. Just confirm the rental contract <em>allows</em> the cross-border drive (open item).</li>
+      <li><b>Fuel:</b> Petrol stations (Circle K, Neste, Viada) are common on the A-roads. Return the car with a full tank to avoid refuelling charges.</li>
+      <li><b>Old Towns:</b> Riga &amp; Vilnius Old Towns are largely pedestrian/restricted — park at the hotel garage or a nearby lot, don't drive in to the door.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ STUMBLE WALKS ============ -->
+<section id="walks" class="section-print-break">
+  <div class="section-eyebrow">The heart of the trip</div>
+  <h2>Stumble walks</h2>
+  <p class="lede">Not checklists. Wander zones — the few streets and doorways where beauty tends to ambush you. Walk slowly, follow the open door, let one lane lead to the next.</p>
+  <hr class="rule">
+
+  <div class="card">
+    <h3>Tallinn — the medieval wander zone</h3>
+    <p>Your base, the Telegraaf, sits right inside it. Give Tallinn one truly unplanned day (Jul 11) and let it work.</p>
+    <h4>The lanes</h4>
+    <ul>
+      <li><b>Vene Street</b> — the hotel's own street; oldest, most atmospheric spine.</li>
+      <li><b>St. Catherine's Passage (Katariina käik)</b> — the postcard alley; best at dusk and after dark.</li>
+      <li><b>Pikk Street</b> — guild houses, the old merchants' road up toward the towers.</li>
+      <li><b>Town Hall Square (Raekoja plats)</b> — and the tiny lanes (Saiakang) feeding off it, where the cellar cafés hide.</li>
+      <li><b>Toompea viewpoints</b> — Kohtuotsa &amp; Patkuli, for the red roofs from above.</li>
+    </ul>
+    <h4>Happy-accident pins</h4>
+    <p>Café Maiasmokk · Pierre Chocolaterie (Master's Courtyard) · Kehrwieder (Saiakang lane) · Kofeman · Loulou (breakfast) · Schlössle Hotel fireplace lounge (drop in as non-guests) · the Telegraaf bar.</p>
+  </div>
+
+  <div class="card">
+    <h3>Riga — two textures in one Old Town</h3>
+    <p>Riga is the peak "unplanned jaw-dropping room" city. It has two distinct moods; wander between them on Jul 15 and reserve only Rozengrāls.</p>
+    <h4>Texture one — Art Nouveau facades</h4>
+    <ul>
+      <li><b>Alberta iela</b> — the most extravagant street; look <em>up</em>.</li>
+      <li><b>Elizabetes iela</b> — more of the same grandeur a block over.</li>
+      <li><b>Art Café Sienna</b> — coffee among period rooms while you're up there.</li>
+    </ul>
+    <h4>Texture two — Old Town cellars</h4>
+    <ul>
+      <li><b>Rozengrāls</b> — a 13th-century candlelit cellar (the one to reserve).</li>
+      <li><b>Riga Black Magic</b> — theatrical dark bar built on Riga Black Balsam.</li>
+      <li><b>House of the Black Heads</b> — the fairy-tale facade on Town Hall Square.</li>
+      <li><b>Grand Palace Hotel bar</b> — your own old-world nightcap room.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Vilnius — magic behind the archways</h3>
+    <p>Vilnius doesn't show off on the street; it hides courtyards behind gates. Push the doors open.</p>
+    <h4>The spine &amp; the secrets</h4>
+    <ul>
+      <li><b>Pilies Street</b> — the main artery; the good stuff is down the side lanes off it.</li>
+      <li><b>Courtyards off Pilies &amp; Didžioji</b> — including the hotel PACAI's own hidden courtyard.</li>
+      <li><b>Užupis</b> — cross the little bridge into the self-declared artists' republic; find the constitution on the wall, the galleries, the river benches.</li>
+      <li><b>Cathedral Square</b> — the grand open end of the Old Town.</li>
+    </ul>
+    <h4>Happy-accident pins</h4>
+    <p>Eskedar Coffee Bar · Italala Caffe · Augustas &amp; Barbora Love Story Café · Užupis wine bars · Grand Hotel Vilnius afternoon tea (if it fits) · PACAI courtyard.</p>
+  </div>
+</section>
+
+<!-- ============ FOOD ============ -->
+<section id="food" class="section-print-break">
+  <div class="section-eyebrow">Tables &amp; cups</div>
+  <h2>Restaurants &amp; cafés</h2>
+  <p class="lede">Recommendations, not reservations — except where it says "reserve." Search by name, filter by city. Tap 📍 for Maps.</p>
+  <hr class="rule">
+  <div class="filterbar no-print">
+    <input id="food-search" type="search" placeholder="Search restaurants, cafés, bars…" aria-label="Search places">
+    <span id="food-chips"></span>
+  </div>
+  <div id="food-table"></div>
+</section>
+
+<!-- ============ CASTLES ============ -->
+<section id="castles" class="section-print-break">
+  <div class="section-eyebrow">Out of the cities</div>
+  <h2>Castles &amp; countryside</h2>
+  <p class="lede">The car days. Keep them gentle — one or two stops beats a marathon.</p>
+  <hr class="rule">
+  <div id="castle-cards" class="grid cols-2"></div>
+</section>
+
+<!-- ============ BUDGET ============ -->
+<section id="budget" class="section-print-break">
+  <div class="section-eyebrow">The numbers</div>
+  <h2>Budget</h2>
+  <p class="lede">Confirmed costs only, plus an honest list of what's still unknown.</p>
+  <hr class="rule">
+  <div id="budget-table"></div>
+  <div id="budget-unknowns"></div>
+</section>
+
+<!-- ============ PRACTICAL ============ -->
+<section id="practical" class="section-print-break">
+  <div class="section-eyebrow">Good to know</div>
+  <h2>Practical guide</h2>
+  <p class="lede">The boring-but-important layer, in one place.</p>
+  <hr class="rule">
+  <div class="grid cols-2">
+    <div class="card tight">
+      <h4>Weather — July in the Baltics</h4>
+      <p>Mild and long-lit. Highs usually <b>19–24 °C (66–75 °F)</b>, cool evenings around 12–14 °C. Daylight is <em>very</em> long (sun up ~4:30 AM, down ~10:30 PM). Pack layers and a light rain jacket — showers come and go.</p>
+    </div>
+    <div class="card tight">
+      <h4>Money &amp; cards</h4>
+      <p>All four countries use the <b>euro (€)</b> — no currency changes en route. Cards are accepted almost everywhere; carry a little cash for small cafés and markets. Tell your bank you're traveling. ATMs (Otto., Luminor, SEB) are easy to find.</p>
+    </div>
+    <div class="card tight">
+      <h4>Power &amp; plugs</h4>
+      <p>All four use <b>Type C / F plugs, 230 V</b>. Bring a EU adapter (and ideally a small multi-USB charger). US dual-voltage electronics (phones, laptops) just need the plug adapter, no converter.</p>
+    </div>
+    <div class="card tight">
+      <h4>Passport &amp; Schengen</h4>
+      <p>Finland, Estonia, Latvia, Lithuania are all in the <b>Schengen area</b> — one entry stamp at Helsinki, then no border checks between countries. Passports valid 6+ months past return. (EU's new ETIAS may apply for US visitors — check status before travel.)</p>
+    </div>
+    <div class="card tight">
+      <h4>Phone &amp; data</h4>
+      <p>An EU <b>eSIM</b> (Airalo / Holafly) covering all four countries is the cheapest path, or confirm your carrier's international plan. Download <b>offline Google Maps</b> for FI/EE/LV/LT before you go (open item).</p>
+    </div>
+    <div class="card tight">
+      <h4>Health &amp; emergencies</h4>
+      <p>Emergency number across the EU is <b>112</b>. Pharmacies = "Apteekki / Apteek / Aptieka / Vaistinė." Bring any prescriptions in original packaging + a small kit (pain relief, blister plasters for the cobblestones, motion-sickness for the ferry).</p>
+    </div>
+    <div class="card tight">
+      <h4>Travel insurance</h4>
+      <p>Confirm a policy that covers medical + trip interruption + the rental car gap (if not relying on a credit-card CDW). Save the policy number offline.</p>
+    </div>
+    <div class="card tight">
+      <h4>Copies &amp; backups</h4>
+      <p>Keep this guide saved offline (or printed). Photograph passports, both tickets, all hotel confirmations, and the car booking; store in a shared album you can both reach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHECKLISTS ============ -->
+<section id="checklists" class="section-print-break">
+  <div class="section-eyebrow">Tick the boxes</div>
+  <h2>Printable checklists</h2>
+  <p class="lede">Print this section, or tap the boxes on your phone.</p>
+  <hr class="rule">
+  <div class="grid cols-2">
+    <div class="card">
+      <h4>Before departure</h4>
+      <ul class="checklist" data-auto="before"></ul>
+    </div>
+    <div class="card">
+      <h4>Each travel day</h4>
+      <ul class="checklist">
+        <li><input type="checkbox"><span class="txt">Passports + both tickets on phone</span></li>
+        <li><input type="checkbox"><span class="txt">Today's hotel address & confirmation handy</span></li>
+        <li><input type="checkbox"><span class="txt">Phone charged + battery pack</span></li>
+        <li><input type="checkbox"><span class="txt">Offline map of today's city loaded</span></li>
+        <li><input type="checkbox"><span class="txt">Chargers, adapter, meds in carry-on</span></li>
+        <li><input type="checkbox"><span class="txt">Next leg booked / time confirmed</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Hotel check-in</h4>
+      <ul class="checklist">
+        <li><input type="checkbox"><span class="txt">Show confirmation # + passports</span></li>
+        <li><input type="checkbox"><span class="txt">Confirm checkout time & late-bag storage</span></li>
+        <li><input type="checkbox"><span class="txt">Ask: best nearby breakfast & pharmacy</span></li>
+        <li><input type="checkbox"><span class="txt">Ask about parking (Riga & Vilnius)</span></li>
+        <li><input type="checkbox"><span class="txt">Wi-Fi password</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Rental car pickup (Jul 16, RIX)</h4>
+      <ul class="checklist">
+        <li><input type="checkbox"><span class="txt">Confirm automatic transmission in writing</span></li>
+        <li><input type="checkbox"><span class="txt">Confirm cross-border LV→LT allowed</span></li>
+        <li><input type="checkbox"><span class="txt">Confirm one-way drop at VNO included</span></li>
+        <li><input type="checkbox"><span class="txt">Photograph car (all sides + interior + fuel)</span></li>
+        <li><input type="checkbox"><span class="txt">Note existing damage on the agreement</span></li>
+        <li><input type="checkbox"><span class="txt">Check spare/kit, lights, A/C, fuel type</span></li>
+        <li><input type="checkbox"><span class="txt">Save roadside-assistance number</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Rental car return (Jul 18 eve or Jul 19 early, VNO)</h4>
+      <ul class="checklist">
+        <li><input type="checkbox"><span class="txt">Refuel to full near the airport</span></li>
+        <li><input type="checkbox"><span class="txt">Remove ALL belongings (check boot & seat pockets)</span></li>
+        <li><input type="checkbox"><span class="txt">Photograph car at return (proof of condition)</span></li>
+        <li><input type="checkbox"><span class="txt">Get return confirmation / drop key per after-hours process</span></li>
+        <li><input type="checkbox"><span class="txt">Keep all receipts</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Final night / early flight (Jul 18–19)</h4>
+      <ul class="checklist">
+        <li><input type="checkbox"><span class="txt">Pack tonight — flight is 7:50 AM</span></li>
+        <li><input type="checkbox"><span class="txt">Car returned OR taxi booked for ~5:15 AM</span></li>
+        <li><input type="checkbox"><span class="txt">Passports + tickets + 23 kg bags ready</span></li>
+        <li><input type="checkbox"><span class="txt">Airport arrival ~5:30 AM</span></li>
+        <li><input type="checkbox"><span class="txt">Charge phones overnight</span></li>
+        <li><input type="checkbox"><span class="txt">Final sweep of the room for chargers</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNAL ============ -->
+<section id="journal" class="section-print-break">
+  <div class="section-eyebrow">For the two of you</div>
+  <h2>Journal pages</h2>
+  <p class="lede">Fill these in as you go — or on the long flight home.</p>
+  <hr class="rule">
+  <div class="card">
+    <div class="journal-line"><span class="q">Best meal</span><span class="blank"></span></div>
+    <div class="journal-line"><span class="q">Best hidden room we stumbled into</span><span class="blank"></span></div>
+    <div class="journal-line"><span class="q">Best walk</span><span class="blank"></span></div>
+    <div class="journal-line"><span class="q">Best hotel</span><span class="blank"></span></div>
+    <div class="journal-line"><span class="q">The thing Grace loved most</span><span class="blank"></span></div>
+    <div class="journal-line"><span class="q">The thing Michael loved most</span><span class="blank"></span></div>
+    <div class="journal-line"><span class="q">Notes for next trip</span><span class="blank"></span><span class="blank"></span></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>✦ &nbsp; <b>Baltic Adventure 2026</b> — made for Michael &amp; Grace &nbsp; ✦</p>
+  <p><small>Offline-ready. Tap <b>🖨 Print / Save PDF</b> in the menu for a printable copy.
+     Confirmed details from your own bookings; everything labeled a recommendation is just that.
+     Safe travels — wander well.</small></p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

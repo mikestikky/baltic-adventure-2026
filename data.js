@@ -1,0 +1,442 @@
+/*
+  Baltic Adventure 2026 — canonical trip data.
+  This file is the single source of truth for the guide. Edit values here and
+  the whole site updates. A mirror copy lives in data/trip.json (keep in sync
+  if you hand-edit; or just edit here — the site loads THIS file, not the JSON).
+
+  CONFIRMED data (booking numbers, costs) comes straight from Michael & Grace's
+  tickets and confirmations. Anything labeled "recommendation" is a suggestion,
+  not a reservation. Open items are flagged and surfaced at the top of the guide.
+*/
+window.TRIP = {
+  meta: {
+    title: "Baltic Adventure 2026",
+    subtitle: "Michael & Grace's Complete Travel Guide",
+    dates: "July 8–19, 2026",
+    route: "Helsinki · Tallinn · Riga · Vilnius",
+    theme: "Hidden rooms, medieval streets, grand hotels, candlelit cellars, castles, and Baltic countryside",
+    travelers: ["Michael", "Grace"],
+    booking_ref: "XLOIRG",
+    currency_note: "All four countries use the euro (€). USD figures are approximate.",
+    updated: "2026-06-25"
+  },
+
+  // ---- FLIGHTS ----------------------------------------------------------
+  flights: [
+    {
+      leg: "Outbound", date: "2026-07-08", date_label: "Wed, Jul 8",
+      flight: "AF3551", operated_by: "Delta",
+      from: "Salt Lake City (SLC)", to: "Paris (CDG)",
+      depart: "3:35 PM", arrive: "9:30 AM (+1, Jul 9)",
+      seat: "", cabin: "Main Cabin", baggage: "1 × 23 kg checked", status: "OK",
+      notes: "Departure day. Leave a comfortable airport buffer."
+    },
+    {
+      leg: "Connection", date: "2026-07-09", date_label: "Thu, Jul 9",
+      flight: "AF1070", operated_by: "Air France",
+      from: "Paris (CDG)", to: "Helsinki (HEL)",
+      depart: "12:35 PM", arrive: "4:40 PM",
+      seat: "15A", cabin: "Main Cabin", baggage: "1 × 23 kg checked", status: "OK",
+      notes: "Arrive Helsinki 4:40 PM — taxi or tram to Hotel Lilla Roberts, easy night."
+    },
+    {
+      leg: "Return", date: "2026-07-19", date_label: "Sun, Jul 19",
+      flight: "KL2844", operated_by: "airBaltic",
+      from: "Vilnius (VNO)", to: "Amsterdam (AMS)",
+      depart: "7:50 AM", arrive: "9:15 AM",
+      seat: "", cabin: "", baggage: "1 × 23 kg checked", status: "OK",
+      notes: "Very early departure — target airport arrival ~5:30 AM."
+    },
+    {
+      leg: "Connection", date: "2026-07-19", date_label: "Sun, Jul 19",
+      flight: "KL6027", operated_by: "Delta",
+      from: "Amsterdam (AMS)", to: "Salt Lake City (SLC)",
+      depart: "10:50 AM", arrive: "1:08 PM",
+      seat: "", cabin: "", baggage: "1 × 23 kg checked", status: "OK",
+      notes: "Home directly from the Vilnius routing — no Helsinki backtrack."
+    }
+  ],
+  ticket: {
+    passenger_on_ticket: "Michael Robson",
+    ticket_number: "057 236 023 779 2",
+    total_cost: "USD 1,596.73",
+    booking_ref: "XLOIRG",
+    open_item: "Verify Grace has a SEPARATELY ISSUED ticket — the uploaded e-ticket lists only Michael."
+  },
+
+  // ---- HOTELS -----------------------------------------------------------
+  hotels: [
+    {
+      id: "lilla", city: "Helsinki", name: "Hotel Lilla Roberts",
+      website: "https://lillaroberts.com/",
+      address: "Pieni Roobertinkatu 1, 00130 Helsinki, Finland",
+      phone: "", email: "",
+      checkin: "2026-07-09", checkout: "2026-07-10", nights: 1,
+      room: "", rate: "",
+      confirmation: "Confirmed by Preferred Hotels",
+      extra_ref: "I Prefer Member #: PHWABARVT3",
+      cost: "EUR 147.90 / ≈ USD 168.06",
+      payment: "Card ending 3002",
+      status: "Confirmed",
+      why: "Arrival night and recovery before the ferry to Tallinn. A jewel-box Art Deco hotel in the Design District — exactly the kind of room you like to step into tired and feel held.",
+      purpose: "Arrival / recovery",
+      nearby_coffee: "Hotel's own Krog Roba bar & restaurant; cafés along Iso Roobertinkatu pedestrian street.",
+      nearby_stumble: "Design District lanes, Esplanadi park, Market Square & Old Market Hall (Vanha Kauppahalli), Diana Park.",
+      essentials: "Pharmacy (Apteekki) and groceries (K-Market / Alepa) within a few blocks on Iso Roobertinkatu; ATMs (Otto.) nearby.",
+      notes: "One night only — don't overplan. Drop bags, shower, wander to dinner."
+    },
+    {
+      id: "telegraaf", city: "Tallinn", name: "Hotel Telegraaf, Autograph Collection",
+      website: "https://www.telegraafhotel.com/",
+      address: "Vene 9, 10123 Tallinn Old Town, Estonia",
+      phone: "+372 600 0600", email: "",
+      checkin: "2026-07-10", checkout: "2026-07-14", nights: 4,
+      room: "", rate: "",
+      confirmation: "93263159",
+      extra_ref: "",
+      cost: "EUR 1,415.00 total",
+      payment: "",
+      status: "Confirmed",
+      why: "Your main 'stumble' base inside Tallinn's medieval core — a polished historic hotel on Vene Street, steps from St. Catherine's Passage. (The alternative once considered was the Schlössle Hotel, whose fireplace lounge is still worth a non-guest visit.)",
+      purpose: "Tallinn Old Town base (4 nights)",
+      nearby_coffee: "Café Maiasmokk (oldest café in Tallinn, ~3 min walk); Kehrwieder on Town Hall Square.",
+      nearby_stumble: "Vene Street, St. Catherine's Passage, Pikk Street, Town Hall Square — all on the doorstep.",
+      essentials: "Pharmacies (Apteek) and Rimi/Coop groceries around Viru and Town Hall Square; ATMs throughout Old Town.",
+      notes: "Old Town location means cobblestones — pack comfortable shoes. Telegraaf's own bar is a fine nightcap room."
+    },
+    {
+      id: "grandpalace", city: "Riga", name: "Grand Palace Hotel",
+      website: "https://www.grandpalaceriga.com",
+      address: "Pils Street 12, Riga LV-1050, Latvia",
+      phone: "+371 6704 4000", email: "info@grandpalaceriga.com",
+      checkin: "2026-07-14", checkout: "2026-07-17", nights: 3,
+      room: "Superior King", rate: "Prepay & Save",
+      confirmation: "Room confirmation 48469SG014613",
+      extra_ref: "Itinerary number 22402B8775206",
+      cost: "EUR 697.84 (incl. taxes & fees)",
+      payment: "",
+      status: "Confirmed",
+      why: "Riga Old Town at its most refined — an old-world grand hotel a short walk from the Art Nouveau district and the city's candlelit cellars. The peak 'unplanned jaw-dropping room' city, and this is the room to come home to.",
+      purpose: "Riga Old Town / Art Nouveau / cellar base (3 nights)",
+      nearby_coffee: "Hotel's own Orangerie / bar; cafés around Doma laukums (Dome Square) a few minutes away.",
+      nearby_stumble: "Old Town lanes toward the Dome Cathedral and House of the Black Heads; Art Nouveau on Alberta & Elizabetes iela ~15 min walk.",
+      essentials: "Pharmacies (Aptieka — Mēness aptieka) and Rimi groceries nearby; ATMs around Old Town.",
+      notes: "Verify parking before car pickup on Jul 16 — Old Town access is restricted; ask the hotel about its garage or a nearby lot."
+    },
+    {
+      id: "pacai", city: "Vilnius", name: "Hotel PACAI",
+      website: "https://www.hotelpacai.com/",
+      address: "Didžioji Street 7, LT-01128 Vilnius, Lithuania",
+      phone: "+370 5 277 0000", email: "reservations@hotelpacai.com",
+      checkin: "2026-07-17", checkout: "2026-07-19", nights: 2,
+      room: "Superior room, double", rate: "Flexible",
+      confirmation: "79121SG051053",
+      extra_ref: "Itinerary number 5154B26337290",
+      cost: "EUR 534.00 (incl. taxes)",
+      payment: "",
+      status: "Confirmed — verify occupancy",
+      why: "A 17th-century palazzo turned design hotel on Didžioji Street, with a hidden courtyard and a vaulted feel. Vilnius magic hides behind archways, and PACAI is one of them.",
+      purpose: "Vilnius Old Town base (2 nights)",
+      nearby_coffee: "Hotel's own Nineteen18 restaurant/bar; cafés along Pilies and Didžioji streets.",
+      nearby_stumble: "Pilies Street spine, Town Hall Square, courtyards off Didžioji, and Užupis just across the river.",
+      essentials: "Pharmacies (Vaistinė) and groceries (IKI / Rimi) around the Old Town; ATMs nearby.",
+      notes: "OPEN ITEM: screenshot showed '1 Adult.' Confirm the booking is for 2 adults / Grace included before arrival."
+    }
+  ],
+
+  // ---- RENTAL CAR -------------------------------------------------------
+  car: {
+    vendor: "EconomyBookings",
+    website: "https://www.economybookings.com/",
+    booking_number: "B41497753",
+    vehicle: "Volkswagen Polo Automatic (or similar economy)",
+    transmission: "Automatic",
+    seats: 5, luggage: 2, ac: true,
+    driver: "Michael Robson",
+    pickup: { date: "2026-07-16", time: "12:00 PM", location: "Riga Airport (RIX)" },
+    dropoff_current: { date: "2026-07-21", time: "1:00 PM", location: "Vilnius Airport (VNO)" },
+    dropoff_should_be: "Jul 19 very early at VNO (before the 7:50 AM flight) OR Jul 18 evening at VNO + taxi to airport Jul 19.",
+    cost_estimate: "Not shown on screenshot; Michael estimated ≈ USD 500–600.",
+    status: "Confirmed — return date WRONG, must fix",
+    open_items: [
+      "URGENT: Return date currently Jul 21 — flight departs Jul 19 at 7:50 AM. Change to Jul 19 early, or return Jul 18 evening.",
+      "Confirm cross-border driving Latvia → Lithuania is explicitly allowed/included.",
+      "Confirm one-way drop (RIX pickup → VNO return) is included in the quote.",
+      "Confirm automatic transmission in writing.",
+      "Check insurance deductible and whether a credit-card CDW applies in Latvia & Lithuania.",
+      "Confirm after-hours / early-morning return procedure at VNO."
+    ]
+  },
+
+  // ---- OPEN ITEMS / ACTION CHECKLIST -----------------------------------
+  open_items: [
+    { priority: "critical", text: "Verify Grace has a separately issued flight ticket (e-ticket lists only Michael).", done: false },
+    { priority: "critical", text: "Correct rental car return: change Jul 21 → Jul 19 (early) or Jul 18 evening at VNO.", done: false },
+    { priority: "critical", text: "Confirm Hotel PACAI is booked for 2 adults, not 1 adult.", done: false },
+    { priority: "high", text: "Book Helsinki → Tallinn ferry (Tallink) for Jul 10, morning/midday.", done: false },
+    { priority: "high", text: "Book Tallinn → Riga transport (Lux Express bus) for Jul 14.", done: false },
+    { priority: "high", text: "Confirm car rental includes cross-border Latvia→Lithuania and one-way drop-off.", done: false },
+    { priority: "medium", text: "Confirm after-hours / early return procedure at Vilnius Airport (VNO).", done: false },
+    { priority: "medium", text: "Check parking near Grand Palace Riga and Hotel PACAI Vilnius.", done: false },
+    { priority: "medium", text: "Download offline Google Maps for Finland, Estonia, Latvia, Lithuania.", done: false },
+    { priority: "medium", text: "Add all bookings to the calendar.", done: false },
+    { priority: "low", text: "Confirm automatic transmission in writing on the car booking.", done: false },
+    { priority: "low", text: "Check insurance deductible / credit-card CDW coverage for LV & LT.", done: false }
+  ],
+
+  // ---- DAY BY DAY -------------------------------------------------------
+  days: [
+    {
+      n: 0, date: "2026-07-08", date_label: "Wed, Jul 8", city: "In flight",
+      sleep: "Overnight on the plane", transport: "SLC → Paris (AF3551, dep 3:35 PM)",
+      theme: "Departure day. The trip begins the moment you leave for the airport.",
+      morning: "Final packing and the before-departure checklist. Double-check passports, the Air France booking ref (XLOIRG), and that bags are within 23 kg.",
+      afternoon: "Depart Salt Lake City 3:35 PM. Settle in for the long leg to Paris.",
+      evening: "Sleep on the plane if you can — Helsinki is +9 hours and you land tomorrow afternoon.",
+      reservation: "Flight ticket XLOIRG · 1 × 23 kg checked bag each.",
+      stumble: "",
+      food: "Eat a real meal at SLC before boarding; airline food is a bonus, not a plan.",
+      backup: "If the SLC→CDG leg slips, the CDG→HEL connection (12:35 PM Jul 9) has a buffer, but know your rebooking options.",
+      maps: [],
+      dont_overplan: false
+    },
+    {
+      n: 1, date: "2026-07-09", date_label: "Thu, Jul 9", city: "Helsinki",
+      sleep: "Hotel Lilla Roberts", transport: "Paris → Helsinki (AF1070, arr 4:40 PM); taxi or tram to hotel",
+      theme: "Land softly. Recover. No hard scheduling tonight.",
+      morning: "In transit — Paris CDG connection, depart 12:35 PM. Seat 15A on the Helsinki leg.",
+      afternoon: "Arrive Helsinki 4:40 PM. Taxi (~30 min) or the train + tram to Lilla Roberts. Check in, shower, reset.",
+      evening: "Easy harbor-side wander and an unhurried dinner near the hotel. You've been traveling 24 hours — let it be gentle.",
+      reservation: "Hotel Lilla Roberts — 1 night, EUR 147.90. I Prefer #PHWABARVT3.",
+      stumble: "Drift down Iso Roobertinkatu, cut to the Esplanadi promenade, and look in at the Old Market Hall (Vanha Kauppahalli) if it's still open. Don't force it — it's a stretch-your-legs night.",
+      food: "Dinner near the hotel: Savotta (rustic Finnish, by the cathedral) or the hotel's own Krog Roba. Keep it simple.",
+      backup: "Rain: Esplanadi cafés, the Old Market Hall, or just the hotel bar. Jet-lagged is allowed.",
+      maps: ["Esplanadi Helsinki", "Market Square Helsinki", "Old Market Hall Helsinki", "Design District Helsinki"],
+      dont_overplan: true
+    },
+    {
+      n: 2, date: "2026-07-10", date_label: "Fri, Jul 10", city: "Helsinki → Tallinn",
+      sleep: "Hotel Telegraaf, Tallinn", transport: "Tallink ferry Helsinki → Tallinn (~2 hrs)",
+      theme: "Cross the gulf and step into the medieval core.",
+      morning: "Relaxed checkout from Lilla Roberts. Coffee, maybe a last look at Market Square, then to the West Terminal for the ferry.",
+      afternoon: "Tallink ferry to Tallinn (~2 hours). Arrive, walk or short taxi to Hotel Telegraaf on Vene Street, check into your 4-night home.",
+      evening: "First Old Town drift: Town Hall Square, Pikk Street, Vene Street. Let the medieval streets do the work.",
+      reservation: "Hotel Telegraaf — 4 nights, conf. 93263159. BOOK the Tallink ferry in advance.",
+      stumble: "From the terminal you'll come up into the Old Town walls — follow the lanes that look oldest. St. Catherine's Passage at dusk is the first 'oh' moment.",
+      food: "Dinner in Old Town — Rataskaevu 16 (book ahead) or Lore Bistroo. A nightcap in the Telegraaf bar.",
+      backup: "Rough water or rain: ferries run regardless; just stay covered between terminal and hotel.",
+      maps: ["Tallink West Terminal Helsinki", "Hotel Telegraaf Tallinn", "Town Hall Square Tallinn", "St Catherine's Passage Tallinn"],
+      dont_overplan: false
+    },
+    {
+      n: 3, date: "2026-07-11", date_label: "Sat, Jul 11", city: "Tallinn",
+      sleep: "Hotel Telegraaf", transport: "On foot",
+      theme: "The pure Tallinn stumble day. This is what you came for.",
+      morning: "Start at Maiasmokk for coffee and marzipan, then wander Vene and Pikk with no agenda.",
+      afternoon: "Hidden courtyards, cellar cafés, the Master's Courtyard (Meistrite Hoov). Duck into Pierre Chocolaterie. Let one lane lead to the next.",
+      evening: "St. Catherine's Passage after dark; a fireplace-lounge moment — the Schlössle Hotel lounge as a non-guest, or the Telegraaf bar.",
+      reservation: "None required. Keep it open.",
+      stumble: "TODAY IS THE STUMBLE. No checklist — follow the cobblestones, the smell of coffee, the open door. The 'best hidden room' of the trip is probably found today.",
+      food: "Café Maiasmokk, Kehrwieder (Saiakang lane), Kofeman, Loulou for breakfast. Dinner: Rataskaevu 16 if not done.",
+      backup: "Rain makes the cellar cafés better, not worse. This is a rain-proof day.",
+      maps: ["Cafe Maiasmokk Tallinn", "Pierre Chocolaterie Tallinn", "Vene Street Tallinn", "Pikk Street Tallinn", "Schlossle Hotel Tallinn"],
+      dont_overplan: true
+    },
+    {
+      n: 4, date: "2026-07-12", date_label: "Sun, Jul 12", city: "Tallinn",
+      sleep: "Hotel Telegraaf", transport: "On foot",
+      theme: "Walls, towers, and viewpoints — with Medieval Days as ambient festival.",
+      morning: "Up to Toompea for the Patkuli and Kohtuotsa viewpoints over the red roofs. Danish King's Garden and the towers along the way.",
+      afternoon: "Kiek in de Kök and the town wall walk. Medieval Days (Jul 10–12) may be winding through the streets — treat it as atmosphere, not a destination.",
+      evening: "Back into St. Catherine's Passage after dark; dinner leaning medieval or modern, your mood.",
+      reservation: "Keep flexible. Olde Hansa needs no booking for a drink; Rataskaevu 16 does for dinner.",
+      stumble: "Medieval Days means costumed lanes and market stalls appearing where they weren't yesterday — wander into it rather than chasing a program.",
+      food: "Dinner: Rataskaevu 16 (modern Estonian) or Olde Hansa (full medieval theatre) if you want to lean in.",
+      backup: "Rain: the towers and Kiek in de Kök are largely indoors; the wall walk can wait.",
+      maps: ["Kohtuotsa viewpoint Tallinn", "Kiek in de Kok Tallinn", "Danish Kings Garden Tallinn", "Toompea Tallinn", "Rataskaevu 16 Tallinn"],
+      dont_overplan: false
+    },
+    {
+      n: 5, date: "2026-07-13", date_label: "Sun, Jul 13", city: "Tallinn",
+      sleep: "Hotel Telegraaf", transport: "On foot, tram, or a short taxi",
+      theme: "Contrast day — industrial-creative Tallinn outside the walls.",
+      morning: "Telliskivi Creative City and Kalamaja's wooden houses — coffee, design shops, street art. A different texture entirely.",
+      afternoon: "Either the Seaplane Harbour (Lennusadam) maritime museum or Kadriorg Park & Palace and the Fotografiska rooftop.",
+      evening: "Back to Old Town for a last quiet night before Riga. Easy dinner.",
+      reservation: "Optional dinner reservation if you want one — otherwise loose.",
+      stumble: "Kalamaja's back streets are the stumble zone here — wooden facades, tiny galleries, the Balti Jaam market.",
+      food: "Lunch/coffee in Telliskivi; Fotografiska rooftop for a drink; Lore Bistroo or a Kalamaja spot for dinner.",
+      backup: "Rain: Seaplane Harbour and Fotografiska are indoor anchors.",
+      maps: ["Telliskivi Creative City Tallinn", "Kalamaja Tallinn", "Seaplane Harbour Tallinn", "Kadriorg Park Tallinn", "Fotografiska Tallinn"],
+      dont_overplan: false
+    },
+    {
+      n: 6, date: "2026-07-14", date_label: "Mon, Jul 14", city: "Tallinn → Riga",
+      sleep: "Grand Palace Hotel, Riga", transport: "Lux Express bus Tallinn → Riga (~4.5 hrs)",
+      theme: "Move south. Arrive into Riga's Old Town in the evening.",
+      morning: "Checkout from Telegraaf. Coffee, last Old Town look, to the bus station (Tallinn Bus Station / Autobussijaam).",
+      afternoon: "Lux Express to Riga (~4.5 hrs, comfortable coaches with wifi). Arrive, taxi to Grand Palace Hotel, settle in.",
+      evening: "Loose Old Town drift. Riga Black Magic for the riding-bar-and-balsam ritual, the Grand Palace bar, an easy dinner.",
+      reservation: "Grand Palace Hotel — 3 nights, conf. 48469SG014613. BOOK Lux Express in advance.",
+      stumble: "Riga reveals itself slowly from the bus station toward Old Town — let the first cellar door you pass pull you in.",
+      food: "Riga Black Magic (atmosphere + Riga Black Balsam), Grand Palace bar, or a relaxed Old Town dinner. Keep it loose.",
+      backup: "If the bus is delayed, dinner plans flex — Old Town kitchens run late.",
+      maps: ["Tallinn Bus Station", "Grand Palace Hotel Riga", "Riga Black Magic", "Riga Old Town"],
+      dont_overplan: false
+    },
+    {
+      n: 7, date: "2026-07-15", date_label: "Tue, Jul 15", city: "Riga",
+      sleep: "Grand Palace Hotel", transport: "On foot",
+      theme: "The jaw-dropping stumble day. Riga is the peak unplanned-room city.",
+      morning: "Art Nouveau morning: Alberta iela and Elizabetes iela — the most extravagant facades in Europe. Coffee at Art Café Sienna among the period rooms.",
+      afternoon: "Back to Old Town for the cellars: Riga Black Magic, the House of the Black Heads exterior, hidden vaulted bars.",
+      evening: "Rozengrāls — the candlelit medieval cellar — is the one worth reserving. Everything else stays loose.",
+      reservation: "RECOMMENDATION: reserve Rozengrāls for dinner. Leave the rest of the day unplanned.",
+      stumble: "This is Riga's day to ambush you with beauty. Wander between the Art Nouveau district and the Old Town cellars and let the rooms find you.",
+      food: "Art Café Sienna (daytime), Rozengrāls (book), Folkklubs Ala Pagrabs, 3 Pavāru, or Milda for modern Latvian.",
+      backup: "Rain: the cellars and Art Nouveau interiors (Riga Art Nouveau Museum on Alberta iela) are the play.",
+      maps: ["Alberta iela Riga", "Elizabetes iela Riga", "Art Cafe Sienna Riga", "Rozengrals Riga", "House of the Black Heads Riga"],
+      dont_overplan: true
+    },
+    {
+      n: 8, date: "2026-07-16", date_label: "Wed, Jul 16", city: "Riga + countryside",
+      sleep: "Grand Palace Hotel (final Riga night)", transport: "Rental car from RIX 12:00 PM",
+      theme: "Pick up the car at noon. One or two countryside stops — not a marathon.",
+      morning: "Slow Riga morning. Taxi to Riga Airport (RIX) for the 12:00 PM car pickup. Inspect the car, photograph any damage, confirm cross-border + automatic in writing.",
+      afternoon: "Drive into the Gauja valley: Turaida Castle (the red-brick tower over the river) and Sigulda. Cēsis only if time allows — don't force it from a noon start.",
+      evening: "Back to Riga and the Grand Palace for your final Riga night. Park per the hotel's guidance.",
+      reservation: "Car pickup confirmed (B41497753). Grand Palace night 3.",
+      stumble: "Turaida and the Gauja overlooks are the 'beauty you stumble into' in countryside form — quiet, green, medieval.",
+      food: "A simple lunch in Sigulda; dinner back in Riga (Old Town, your pick).",
+      backup: "If pickup runs late or weather turns, pick ONE stop (Turaida) and keep it relaxed. The car's real job starts tomorrow.",
+      maps: ["Riga Airport RIX", "Turaida Castle", "Sigulda", "Gauja National Park", "Cesis Latvia"],
+      dont_overplan: true
+    },
+    {
+      n: 9, date: "2026-07-17", date_label: "Thu, Jul 17", city: "Riga → Vilnius",
+      sleep: "Hotel PACAI, Vilnius", transport: "Drive Riga → Hill of Crosses → Vilnius (~4.5 hrs + stop)",
+      theme: "The big countryside transfer. One iconic stop on the way.",
+      morning: "Check out of the Grand Palace. Drive south toward the Lithuanian border.",
+      afternoon: "Hill of Crosses near Šiauliai — thousands of crosses on a low hill, eerie and moving. ~30–45 min there, then on to Vilnius.",
+      evening: "Arrive Vilnius, check into Hotel PACAI, drop bags. Easy first wander: Pilies Street and the courtyards off Didžioji.",
+      reservation: "Hotel PACAI — 2 nights, conf. 79121SG051053. (Confirm 2 adults.)",
+      stumble: "Vilnius hides its magic behind archways — push open the courtyard gates off Pilies and Didžioji and see what's inside.",
+      food: "Easy first-night dinner near PACAI — Lokys (game, medieval cellar) or a Pilies Street spot. Coffee at Eskedar or Italala.",
+      backup: "If the drive runs long, skip any extra stop and make Hill of Crosses the single one.",
+      maps: ["Hill of Crosses Siauliai", "Hotel PACAI Vilnius", "Pilies Street Vilnius", "Vilnius Old Town"],
+      dont_overplan: false
+    },
+    {
+      n: 10, date: "2026-07-18", date_label: "Fri, Jul 18", city: "Vilnius + Trakai",
+      sleep: "Hotel PACAI", transport: "Car (or train) to Trakai (~30 min)",
+      theme: "Island castle by day, hidden Vilnius by evening. Decide the car return.",
+      morning: "Drive to Trakai early or late to dodge crowds — the red-brick castle on its island in Lake Galvė is the picture-postcard of the trip.",
+      afternoon: "Back to Vilnius. Užupis (the self-declared artists' republic), the courtyards off Pilies, Cathedral Square.",
+      evening: "Final dinner — Džiaugsmas, Ertlio Namas, or Grey. Consider Grand Hotel Vilnius afternoon tea earlier if it fits. DECIDE: return the car tonight at VNO or tomorrow at dawn.",
+      reservation: "Decide car-return timing. Pack for the early flight tonight.",
+      stumble: "Užupis is the stumble zone — cross the little bridge, find the constitution on the wall, the galleries, the river benches.",
+      food: "Trakai: try kibinai (the local pastry) lakeside. Vilnius dinner: Džiaugsmas / Ertlio Namas / Lokys / Grey.",
+      backup: "Rain at Trakai: the castle interior is a museum; or skip Trakai and go deep on Vilnius courtyards and Užupis.",
+      maps: ["Trakai Castle", "Lake Galve Trakai", "Uzupis Vilnius", "Cathedral Square Vilnius", "Vilnius Airport VNO"],
+      dont_overplan: false
+    },
+    {
+      n: 11, date: "2026-07-19", date_label: "Sun, Jul 19", city: "Vilnius → home",
+      sleep: "Home (SLC)", transport: "VNO → AMS → SLC (KL2844 dep 7:50 AM)",
+      theme: "Very early departure. Smooth and unhurried beats fast.",
+      morning: "Airport ~5:30 AM. Return the car at VNO (if not done last night), or taxi over. VNO → AMS departs 7:50 AM.",
+      afternoon: "Amsterdam connection (KL6027, dep 10:50 AM) → Salt Lake City, arrive 1:08 PM.",
+      evening: "Home.",
+      reservation: "Flight XLOIRG · 1 × 23 kg checked bag each · passports.",
+      stumble: "",
+      food: "Coffee and something small at VNO; the long way home has meals aboard.",
+      backup: "Build in margin: if anything is unsure about the car return, returning Jul 18 evening + a pre-booked taxi removes all dawn risk.",
+      maps: ["Vilnius Airport VNO"],
+      dont_overplan: false,
+      reminders: ["Recommended airport arrival ~5:30 AM", "Car return reminder", "Passports", "Baggage 1 × 23 kg each", "VNO dep 7:50 AM"]
+    }
+  ],
+
+  // ---- TRANSPORTATION LEGS ---------------------------------------------
+  transport: [
+    { leg: "Helsinki → Tallinn", date: "2026-07-10", mode: "Ferry", vendor: "Tallink", website: "https://www.tallink.com/", target: "Morning / midday", notes: "~2-hour crossing. Book a departure that allows a relaxed Lilla Roberts checkout and a comfortable Telegraaf check-in. Bring your booking on your phone." },
+    { leg: "Tallinn → Riga", date: "2026-07-14", mode: "Bus", vendor: "Lux Express", website: "https://luxexpress.eu/", target: "Late morning", notes: "~4.5 hrs. Comfortable coaches (wifi, hot drinks). Easier than the train on this route. Private transfer is the alternative if you'd rather not bus." },
+    { leg: "Riga Airport pickup", date: "2026-07-16", mode: "Rental car", vendor: "EconomyBookings", website: "https://www.economybookings.com/", target: "12:00 PM", notes: "Taxi from Grand Palace to RIX. Inspect & photograph the car; confirm cross-border + automatic in writing." },
+    { leg: "Riga → Sigulda/Turaida → Riga", date: "2026-07-16", mode: "Rental car", vendor: "—", website: "", target: "Afternoon", notes: "Countryside day trip without changing hotels. Back to Grand Palace for night 3." },
+    { leg: "Riga → Hill of Crosses → Vilnius", date: "2026-07-17", mode: "Rental car", vendor: "—", website: "", target: "All day", notes: "Main transfer. ~4.5 hrs driving + the Hill of Crosses stop. Arrive Vilnius before evening." },
+    { leg: "Vilnius / Trakai", date: "2026-07-18", mode: "Rental car", vendor: "—", website: "", target: "Day trip", notes: "Trakai is a ~30-min drive. Decide whether to return the car this evening at VNO." },
+    { leg: "Vilnius Airport departure", date: "2026-07-19", mode: "Car return / taxi", vendor: "—", website: "", target: "~5:30 AM", notes: "Flight departs 7:50 AM. Return car at VNO very early, or returned Jul 18 evening + taxi." }
+  ],
+
+  // ---- PLACES (restaurants, cafés, attractions) — searchable -----------
+  places: [
+    // Helsinki
+    { city: "Helsinki", name: "Savotta", type: "Restaurant", tag: "rec", why: "Rustic, theatrical Finnish food by the cathedral — cozy and characterful.", reserve: "Recommended", website: "https://www.ravintolasavotta.fi/", notes: "Reindeer, archipelago classics." },
+    { city: "Helsinki", name: "Shelter", type: "Restaurant", tag: "rec", why: "Intimate neighborhood dining, warm room.", reserve: "Recommended", website: "", notes: "" },
+    { city: "Helsinki", name: "Old Market Hall (Vanha Kauppahalli)", type: "Market / café", tag: "rec", why: "1889 market hall — coffee, salmon soup, a graze among stalls.", reserve: "No", website: "https://vanhakauppahalli.fi/", notes: "Check hours; closes early evening." },
+    { city: "Helsinki", name: "Löyly", type: "Sauna / restaurant", tag: "rec", why: "Architectural seaside sauna + restaurant — very Finnish, very atmospheric.", reserve: "Recommended (sauna)", website: "https://www.loylyhelsinki.fi/", notes: "A bit out from center; book sauna ahead." },
+    { city: "Helsinki", name: "Krog Roba (Hotel Lilla Roberts)", type: "Bar / restaurant", tag: "hotel", why: "Your hotel's own room — easiest possible jet-lagged dinner.", reserve: "No", website: "https://lillaroberts.com/", notes: "In the hotel." },
+
+    // Tallinn
+    { city: "Tallinn", name: "Rataskaevu 16", type: "Restaurant", tag: "rec", why: "Beloved modern Estonian in a candlelit room — the Old Town dinner.", reserve: "Yes — book ahead", website: "https://www.rataskaevu16.ee/", notes: "Popular; reserve early." },
+    { city: "Tallinn", name: "Olde Hansa", type: "Restaurant", tag: "rec", why: "Full medieval theatre — candlelight, costumes, bear and elk. Lean into the theme.", reserve: "Recommended", website: "https://www.oldehansa.ee/", notes: "Touristy but genuinely atmospheric." },
+    { city: "Tallinn", name: "Lore Bistroo", type: "Restaurant", tag: "rec", why: "Stylish Kalamaja bistro — the modern contrast to Old Town.", reserve: "Recommended", website: "https://lorebistroo.ee/", notes: "Near Telliskivi." },
+    { city: "Tallinn", name: "Fotografiska rooftop", type: "Café / bar", tag: "rec", why: "Rooftop restaurant atop the photography museum — views + drinks.", reserve: "Recommended", website: "https://www.fotografiska.com/tallinn/", notes: "Pair with the gallery." },
+    { city: "Tallinn", name: "Café Maiasmokk", type: "Café", tag: "rec", why: "Tallinn's oldest café (1864) — marzipan, old-world room. A must-coffee.", reserve: "No", website: "https://www.kohvikmaiasmokk.ee/", notes: "On Pikk, steps from Telegraaf." },
+    { city: "Tallinn", name: "Pierre Chocolaterie", type: "Café / chocolate", tag: "rec", why: "Hidden in the Master's Courtyard — a tiny candlelit chocolate room.", reserve: "No", website: "https://www.pierre.ee/", notes: "Meistrite Hoov courtyard." },
+    { city: "Tallinn", name: "Kehrwieder (Saiakang)", type: "Café", tag: "rec", why: "Cozy Town Hall Square café down a tiny lane — armchairs and cocoa.", reserve: "No", website: "", notes: "Saiakang passage." },
+    { city: "Tallinn", name: "Kofeman", type: "Café", tag: "rec", why: "Good coffee stop while wandering.", reserve: "No", website: "", notes: "" },
+    { city: "Tallinn", name: "Loulou", type: "Café / breakfast", tag: "rec", why: "Pretty breakfast spot for a slow Old Town morning.", reserve: "No", website: "", notes: "" },
+    { city: "Tallinn", name: "Schlössle Hotel fireplace lounge", type: "Hotel lounge", tag: "rec", why: "The alternative hotel once considered — drop in as a non-guest for the fireplace room.", reserve: "No (just a drink)", website: "https://www.schlossle-hotel.com/", notes: "Quiet, grand, candlelit." },
+    { city: "Tallinn", name: "Hotel Telegraaf bar", type: "Hotel bar", tag: "hotel", why: "Your own hotel's bar — the easiest nightcap room.", reserve: "No", website: "https://www.telegraafhotel.com/", notes: "In the hotel." },
+
+    // Riga
+    { city: "Riga", name: "Rozengrāls", type: "Restaurant", tag: "rec", why: "A genuine medieval cellar lit only by candles — the one Riga dinner to reserve.", reserve: "Yes — reserve", website: "https://www.rozengrals.lv/", notes: "13th-century vaults; book ahead." },
+    { city: "Riga", name: "Riga Black Magic", type: "Bar / café", tag: "rec", why: "Dark, theatrical bar built around Riga Black Balsam — pure atmosphere.", reserve: "No", website: "https://www.melnaismags.lv/", notes: "Try the balsam; also a chocolate shop." },
+    { city: "Riga", name: "Art Café Sienna", type: "Café", tag: "rec", why: "Coffee among Art Nouveau period rooms in the Alberta iela district.", reserve: "No", website: "", notes: "Pair with the facades walk." },
+    { city: "Riga", name: "Grand Palace Hotel bar", type: "Hotel bar", tag: "hotel", why: "Your own grand-hotel bar — old-world nightcap.", reserve: "No", website: "https://www.grandpalaceriga.com", notes: "In the hotel." },
+    { city: "Riga", name: "Milda", type: "Restaurant", tag: "rec", why: "Modern Latvian, warm and personal.", reserve: "Recommended", website: "", notes: "" },
+    { city: "Riga", name: "3 Pavāru Restorāns", type: "Restaurant", tag: "rec", why: "'3 Chefs' — inventive tasting cooking, a step up.", reserve: "Recommended", website: "https://www.3pavari.lv/", notes: "" },
+    { city: "Riga", name: "Folkklubs Ala Pagrabs", type: "Bar / restaurant", tag: "rec", why: "Cavernous folk-music cellar — local beer, hearty plates, live music.", reserve: "Recommended (eve)", website: "https://www.folkklubs.lv/", notes: "Great cellar atmosphere." },
+    { city: "Riga", name: "Barents", type: "Restaurant", tag: "rec", why: "If you want a splurge — refined seafood-forward room.", reserve: "Yes", website: "", notes: "Splurge option." },
+
+    // Vilnius
+    { city: "Vilnius", name: "Džiaugsmas", type: "Restaurant", tag: "rec", why: "Refined modern Lithuanian — a standout final-dinner candidate.", reserve: "Yes", website: "https://dziaugsmas.lt/", notes: "" },
+    { city: "Vilnius", name: "Ertlio Namas", type: "Restaurant", tag: "rec", why: "Historic Lithuanian recipes in an old townhouse — atmospheric and rooted.", reserve: "Recommended", website: "https://ertlionamas.lt/", notes: "" },
+    { city: "Vilnius", name: "Lokys", type: "Restaurant", tag: "rec", why: "Game restaurant in a 15th-century cellar — beaver, boar, candle glow.", reserve: "Recommended", website: "https://www.lokys.lt/", notes: "Off Pilies/Stiklių." },
+    { city: "Vilnius", name: "Grey", type: "Restaurant", tag: "rec", why: "Contemporary tasting room for a modern contrast.", reserve: "Yes", website: "", notes: "" },
+    { city: "Vilnius", name: "Grand Hotel Vilnius afternoon tea", type: "Hotel lounge", tag: "rec", why: "Grand-hotel afternoon tea — only if it fits the day.", reserve: "Recommended", website: "", notes: "Optional treat." },
+    { city: "Vilnius", name: "Eskedar Coffee Bar", type: "Café", tag: "rec", why: "Lovely specialty coffee stop while wandering Old Town.", reserve: "No", website: "", notes: "" },
+    { city: "Vilnius", name: "Italala Caffe", type: "Café", tag: "rec", why: "Cozy café for a courtyard pause.", reserve: "No", website: "", notes: "" },
+    { city: "Vilnius", name: "Augustas & Barbora Love Story Café", type: "Café", tag: "rec", why: "A romantic, story-themed café — fitting for the two of you.", reserve: "No", website: "", notes: "" },
+    { city: "Vilnius", name: "Užupis cafés & wine bars", type: "Café / wine", tag: "rec", why: "The artists' republic across the river — riverside wine and benches.", reserve: "No", website: "", notes: "Wander and pick one." },
+    { city: "Vilnius", name: "Nineteen18 (Hotel PACAI)", type: "Restaurant / bar", tag: "hotel", why: "Your hotel's own restaurant — convenient first or last night.", reserve: "Recommended", website: "https://www.hotelpacai.com/", notes: "In the hotel." }
+  ],
+
+  // ---- CASTLES & COUNTRYSIDE -------------------------------------------
+  castles: [
+    { name: "Turaida Castle", region: "Gauja valley (near Sigulda)", why: "A restored red-brick medieval castle with a tower over the Gauja river — the classic Latvian countryside picture.", drive: "~1 hr from Riga", parking: "Paid lot at the museum reserve.", timing: "Jul 16 afternoon", duration: "1.5–2 hrs", photo: "Climb the main tower for the river-valley view.", rec: "KEEP — the anchor stop." },
+    { name: "Sigulda", region: "Gauja National Park", why: "Spa-town gateway to the Gauja valley — overlooks, a cable car across the valley, easy strolls.", drive: "~1 hr from Riga", parking: "Town lots.", timing: "Pair with Turaida", duration: "1–2 hrs", photo: "Cable-car valley views.", rec: "KEEP — pairs with Turaida." },
+    { name: "Gauja National Park", region: "Latvia", why: "Latvia's largest national park — forested river valley, sandstone cliffs, castle ruins.", drive: "Surrounds Sigulda/Turaida", parking: "At trailheads.", timing: "Jul 16", duration: "As long as you like", photo: "River overlooks.", rec: "KEEP (drive-through)." },
+    { name: "Cēsis", region: "Latvia", why: "A pretty medieval town with castle ruins and candle-lit tower tours.", drive: "~1.5 hrs from Riga", parking: "Town lots.", timing: "Only if time allows", duration: "1.5 hrs", photo: "Castle ruins by candlelight.", rec: "OPTIONAL — skip if starting at noon." },
+    { name: "Hill of Crosses", region: "Near Šiauliai, Lithuania", why: "Thousands upon thousands of crosses on a low hill — strange, solemn, unforgettable. The one iconic stop between Riga and Vilnius.", drive: "On the Riga→Vilnius route", parking: "Free lot at the site.", timing: "Jul 17", duration: "30–45 min", photo: "Wide shot of the cross-covered mounds.", rec: "KEEP — the main transfer-day stop." },
+    { name: "Trakai Castle", region: "Lake Galvė, near Vilnius", why: "A storybook red-brick castle on its own island in a lake — Lithuania's most photographed sight.", drive: "~30 min from Vilnius", parking: "Lots near the lakefront.", timing: "Jul 18, early or late for fewer crowds", duration: "2–3 hrs", photo: "The castle across the water from the footbridge.", rec: "KEEP — the Vilnius day trip. Try kibinai lakeside." }
+  ],
+
+  // ---- BUDGET -----------------------------------------------------------
+  budget: [
+    { item: "Flights — Michael's ticket", amount_eur: null, amount_usd: 1596.73, status: "Confirmed", note: "Ticket 057 236 023 779 2. Grace's ticket: UNCONFIRMED (open item)." },
+    { item: "Hotel Lilla Roberts (Helsinki, 1 night)", amount_eur: 147.90, amount_usd: 168.06, status: "Confirmed", note: "" },
+    { item: "Hotel Telegraaf (Tallinn, 4 nights)", amount_eur: 1415.00, amount_usd: null, status: "Confirmed", note: "" },
+    { item: "Grand Palace Hotel (Riga, 3 nights)", amount_eur: 697.84, amount_usd: null, status: "Confirmed", note: "Incl. taxes & fees." },
+    { item: "Hotel PACAI (Vilnius, 2 nights)", amount_eur: 534.00, amount_usd: null, status: "Confirmed", note: "Incl. taxes. Verify 2 adults." },
+    { item: "Rental car (EconomyBookings)", amount_eur: null, amount_usd: 550, status: "Estimate", note: "Cost not on screenshot; Michael estimated ≈ $500–600. PLUS fuel + one-way/cross-border fees." }
+  ],
+  budget_unknowns: [
+    "Grace's flight ticket (likely similar to Michael's ≈ USD 1,597 if separately issued).",
+    "Rental car final total + one-way drop fee + cross-border fee + fuel.",
+    "Ferry (Helsinki→Tallinn) and bus (Tallinn→Riga) fares — both unbooked.",
+    "Meals, museum entries, taxis, and incidentals across 11 days.",
+    "Parking in Riga and Vilnius Old Towns."
+  ]
+};

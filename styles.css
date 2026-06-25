@@ -1,0 +1,228 @@
+/* Baltic Adventure 2026 — concierge guide styles.
+   Offline-safe: system font stacks only (no web fonts). Print stylesheet at end. */
+
+:root{
+  --parchment:#f7f2e7;
+  --parchment-2:#efe7d4;
+  --card:#fffdf8;
+  --ink:#2b2620;
+  --ink-soft:#5c5448;
+  --line:#e0d6c0;
+  --gold:#a9802f;        /* Baltic amber */
+  --gold-soft:#caa45a;
+  --teal:#3f5e57;        /* muted Baltic sea */
+  --teal-soft:#6e8a82;
+  --burgundy:#8a2f33;    /* warnings */
+  --burgundy-bg:#f6e4e2;
+  --green:#3f6b46;
+  --amber:#9a6a16;
+  --shadow:0 6px 22px rgba(60,48,28,.10);
+  --shadow-sm:0 2px 8px rgba(60,48,28,.08);
+  --serif:Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --maxw:920px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);
+  background:var(--parchment);
+  line-height:1.6;font-size:16px;
+}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.18;color:var(--ink)}
+h2{font-size:1.9rem;margin:0 0 .2em}
+h3{font-size:1.3rem;margin:1.4em 0 .4em}
+h4{font-size:1.05rem;margin:1em 0 .3em}
+p{margin:.5em 0}
+small{color:var(--ink-soft)}
+
+/* ---- top nav ---- */
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(43,38,32,.96);
+  backdrop-filter:blur(6px);color:#f3ead6;
+}
+.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;
+  gap:.4rem;padding:.5rem .8rem;overflow-x:auto;scrollbar-width:thin}
+.nav .brand{font-family:var(--serif);font-weight:600;color:#fff;white-space:nowrap;
+  margin-right:.4rem;font-size:.98rem}
+.nav a{color:#e7dcc4;white-space:nowrap;font-size:.82rem;padding:.28rem .5rem;
+  border-radius:6px;letter-spacing:.01em}
+.nav a:hover{background:rgba(255,255,255,.10);text-decoration:none;color:#fff}
+.printbtn{margin-left:auto;border:1px solid var(--gold-soft);background:var(--gold);
+  color:#fff;border-radius:8px;padding:.34rem .7rem;font-size:.82rem;cursor:pointer;
+  white-space:nowrap;font-family:var(--sans)}
+.printbtn:hover{background:#92691f}
+
+main{max-width:var(--maxw);margin:0 auto;padding:0 1rem 5rem}
+section{padding-top:3rem;scroll-margin-top:60px}
+.section-eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;
+  font-size:.72rem;color:var(--gold);font-weight:700;margin-bottom:.3rem}
+.lede{font-family:var(--serif);font-size:1.12rem;color:var(--ink-soft);font-style:italic}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold-soft),transparent);
+  border:0;margin:1.4rem 0}
+
+/* ---- cover ---- */
+.cover{min-height:88vh;display:flex;flex-direction:column;justify-content:center;
+  text-align:center;background:
+   radial-gradient(120% 80% at 50% -10%, #fbf6ea 0%, var(--parchment) 60%);
+  border-bottom:1px solid var(--line);padding:3rem 1rem}
+.cover .kicker{font-family:var(--sans);text-transform:uppercase;letter-spacing:.34em;
+  font-size:.8rem;color:var(--gold);font-weight:700}
+.cover h1{font-size:clamp(2.6rem,8vw,4.6rem);margin:.25em 0 .1em;
+  background:linear-gradient(180deg,#3a3226,#6b5836);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.cover .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,3vw,1.5rem);
+  color:var(--teal)}
+.cover .dates{margin-top:1.1rem;font-weight:600;letter-spacing:.04em}
+.cover .route-chip{display:inline-flex;flex-wrap:wrap;gap:.5rem;justify-content:center;
+  margin-top:1rem}
+.cover .route-chip span{background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:.3rem .85rem;font-size:.9rem;box-shadow:var(--shadow-sm)}
+.cover .theme{max-width:640px;margin:1.6rem auto 0;color:var(--ink-soft);
+  font-family:var(--serif);font-style:italic;font-size:1.05rem}
+.cover .compass{font-size:2rem;color:var(--gold-soft);margin-bottom:.4rem}
+
+/* ---- cards ---- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:1.1rem 1.2rem;box-shadow:var(--shadow-sm);margin:1rem 0}
+.card.tight{padding:.85rem 1rem}
+.grid{display:grid;gap:1rem}
+@media(min-width:680px){.grid.cols-2{grid-template-columns:1fr 1fr}
+  .grid.cols-3{grid-template-columns:1fr 1fr 1fr}}
+
+/* ---- tables ---- */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow-sm);background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:.6rem .7rem;border-bottom:1px solid var(--line);
+  vertical-align:top}
+th{background:var(--parchment-2);font-family:var(--sans);font-size:.74rem;
+  text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);
+  position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#fcf8ee}
+
+/* ---- badges ---- */
+.badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.04em;
+  padding:.12rem .5rem;border-radius:999px;text-transform:uppercase;white-space:nowrap}
+.b-ok{background:#e4efe2;color:var(--green)}
+.b-warn{background:#f6edd9;color:var(--amber)}
+.b-crit{background:var(--burgundy-bg);color:var(--burgundy)}
+.b-rec{background:#eae6f1;color:#5a4a82}
+.b-hotel{background:#e6eeef;color:var(--teal)}
+.b-info{background:#ece5d6;color:var(--ink-soft)}
+
+/* ---- open items / warnings ---- */
+.alert{border-left:4px solid var(--burgundy);background:var(--burgundy-bg);
+  border-radius:10px;padding:.9rem 1.1rem;margin:1rem 0}
+.alert.amber{border-left-color:var(--amber);background:#f8f1de}
+.alert h4{margin:.1em 0 .3em;color:var(--burgundy)}
+.alert.amber h4{color:var(--amber)}
+.checklist{list-style:none;padding:0;margin:.4rem 0}
+.checklist li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem .2rem;
+  border-bottom:1px dashed var(--line)}
+.checklist li:last-child{border-bottom:0}
+.checklist input{margin-top:.35rem;width:1.05rem;height:1.05rem;accent-color:var(--gold);flex:0 0 auto}
+.checklist .txt{flex:1}
+.checklist li.done .txt{text-decoration:line-through;color:var(--ink-soft)}
+.prio{font-size:.66rem;font-weight:800;letter-spacing:.05em;padding:.08rem .4rem;
+  border-radius:5px;text-transform:uppercase;flex:0 0 auto;margin-top:.15rem}
+.prio.critical{background:var(--burgundy);color:#fff}
+.prio.high{background:var(--amber);color:#fff}
+.prio.medium{background:var(--teal);color:#fff}
+.prio.low{background:#b9ad93;color:#fff}
+
+/* ---- day cards ---- */
+.day{border:1px solid var(--line);border-radius:14px;background:var(--card);
+  box-shadow:var(--shadow-sm);margin:1.1rem 0;overflow:hidden}
+.day-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;
+  padding:.9rem 1.1rem;background:linear-gradient(180deg,#fbf6ea,#fffdf8);
+  border-bottom:1px solid var(--line)}
+.day-n{font-family:var(--serif);font-size:1.5rem;color:var(--gold)}
+.day-date{font-weight:700}
+.day-city{font-family:var(--serif);font-style:italic;color:var(--teal);font-size:1.1rem}
+.day-body{padding:.6rem 1.1rem 1.1rem}
+.day-theme{font-family:var(--serif);font-style:italic;color:var(--ink-soft);
+  margin:.3rem 0 .7rem;font-size:1.02rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0}
+.meta-pill{background:var(--parchment-2);border-radius:8px;padding:.25rem .6rem;
+  font-size:.8rem}
+.meta-pill b{color:var(--teal)}
+.slots{display:grid;gap:.5rem;margin:.7rem 0}
+@media(min-width:680px){.slots{grid-template-columns:repeat(3,1fr)}}
+.slot{background:var(--parchment);border:1px solid var(--line);border-radius:10px;
+  padding:.6rem .7rem}
+.slot h5{margin:0 0 .25rem;font-family:var(--sans);font-size:.72rem;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--gold)}
+.slot p{margin:0;font-size:.9rem}
+.stumble{background:#f3eee0;border:1px dashed var(--gold-soft);border-radius:10px;
+  padding:.6rem .8rem;margin:.6rem 0}
+.stumble h5{margin:0 0 .2rem;color:var(--gold);font-family:var(--sans);
+  font-size:.74rem;text-transform:uppercase;letter-spacing:.08em}
+.note-line{font-size:.86rem;margin:.35rem 0}
+.note-line b{color:var(--teal)}
+.dont{display:inline-block;background:#eef3ef;color:var(--green);border-radius:8px;
+  padding:.2rem .55rem;font-size:.78rem;font-weight:600;margin:.3rem 0}
+.maplinks{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.maplinks a{font-size:.8rem;background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:.18rem .6rem}
+.maplinks a::before{content:"📍 "}
+
+/* ---- hotel pages ---- */
+.hotel{border:1px solid var(--line);border-radius:14px;background:var(--card);
+  box-shadow:var(--shadow-sm);margin:1.1rem 0;overflow:hidden}
+.hotel-head{padding:1rem 1.2rem;background:linear-gradient(180deg,#fbf6ea,#fffdf8);
+  border-bottom:1px solid var(--line)}
+.hotel-city{font-family:var(--sans);text-transform:uppercase;letter-spacing:.16em;
+  font-size:.72rem;color:var(--gold);font-weight:700}
+.hotel-head h3{margin:.15rem 0}
+.hotel-body{padding:1rem 1.2rem}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;font-size:.9rem;margin:.4rem 0}
+.kv dt{color:var(--ink-soft);font-weight:600}
+.kv dd{margin:0}
+.why{font-family:var(--serif);font-style:italic;color:var(--ink-soft);margin:.6rem 0;
+  border-left:3px solid var(--gold-soft);padding-left:.8rem}
+
+/* ---- search/filter ---- */
+.filterbar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0}
+.filterbar input[type=search]{flex:1;min-width:180px;padding:.55rem .8rem;
+  border:1px solid var(--line);border-radius:10px;font-size:.95rem;background:var(--card)}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;
+  padding:.32rem .8rem;font-size:.82rem;cursor:pointer;color:var(--ink-soft)}
+.chip.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.muted-count{font-size:.82rem;color:var(--ink-soft)}
+
+/* ---- route map ---- */
+.routemap{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow-sm);padding:1rem;overflow-x:auto}
+.routemap svg{display:block;min-width:560px;width:100%;height:auto}
+
+/* journal */
+.journal-line{border-bottom:1px solid var(--line);padding:.7rem .2rem .9rem}
+.journal-line .q{font-family:var(--serif);font-style:italic;color:var(--teal);font-size:1.05rem}
+.journal-line .blank{display:block;border-bottom:1px dotted var(--gold-soft);
+  height:1.4rem;margin-top:.5rem}
+
+footer{max-width:var(--maxw);margin:0 auto;padding:2rem 1rem 4rem;color:var(--ink-soft);
+  font-size:.85rem;border-top:1px solid var(--line);text-align:center}
+
+/* ---- print ---- */
+@media print{
+  :root{--shadow:none;--shadow-sm:none}
+  html{scroll-behavior:auto}
+  body{background:#fff;font-size:11.5pt;color:#000}
+  .nav,.printbtn,.filterbar,.no-print{display:none !important}
+  main{max-width:none;padding:0}
+  a{color:#000;text-decoration:none}
+  section{padding-top:.4rem;page-break-inside:auto}
+  h2{page-break-after:avoid}
+  .cover{min-height:auto;page-break-after:always;border:0}
+  .day,.hotel,.card,.alert,.table-wrap,.routemap{page-break-inside:avoid}
+  .section-print-break{page-break-before:always}
+  thead{display:table-header-group}
+  .slot,.stumble{background:#fff;border-color:#ccc}
+  .maplinks a::after{content:"";}
+}
