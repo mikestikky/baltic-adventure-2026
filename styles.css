@@ -71,11 +71,11 @@ section{padding-top:3rem;scroll-margin-top:60px}
   border-bottom:1px solid var(--line);padding:3rem 1rem;
   position:relative;overflow:hidden}
 .cover::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:url("assets/route_map.svg") no-repeat center/contain;opacity:.42}
-.cover::after{content:"";position:absolute;left:50%;top:48%;z-index:1;pointer-events:none;
-  transform:translate(-50%,-50%);width:min(640px,94%);height:60%;
-  background:radial-gradient(ellipse at center, rgba(247,242,231,.94) 0%,
-    rgba(247,242,231,.62) 46%, rgba(247,242,231,0) 74%)}
+  background:url("assets/route_map.svg") no-repeat center/contain;opacity:.78}
+.cover::after{content:"";position:absolute;left:50%;top:46%;z-index:1;pointer-events:none;
+  transform:translate(-50%,-50%);width:min(560px,90%);height:48%;
+  background:radial-gradient(ellipse at center, rgba(247,242,231,.74) 0%,
+    rgba(247,242,231,.40) 48%, rgba(247,242,231,0) 76%)}
 .cover > *{position:relative;z-index:2}
 .cover .kicker{font-family:var(--sans);text-transform:uppercase;letter-spacing:.34em;
   font-size:.8rem;color:var(--gold);font-weight:700}
