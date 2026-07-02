@@ -385,10 +385,10 @@ window.TRIP = {
       "theme": "Land softly. Recover. No hard scheduling tonight.",
       "morning": "In transit — Paris CDG connection, depart 12:35 PM. Seat 15A on the Helsinki leg.",
       "afternoon": "Arrive Helsinki 4:40 PM. Taxi (~30 min) or the train + tram to Lilla Roberts. Check in, shower, reset.",
-      "evening": "Easy harbor-side wander and an unhurried dinner near the hotel. You've been traveling 24 hours — let it be gentle.",
+      "evening": "Walk the Esplanadi to Kappeli for an unhurried dinner and a glass of wine, then drift down to Market Square and the harbor to watch the ferries come and go. You've been traveling 24 hours — let it be gentle.",
       "reservation": "Hotel Lilla Roberts — 1 night, EUR 147.90. I Prefer #PHWABARVT3.",
       "stumble": "Drift down Iso Roobertinkatu, cut to the Esplanadi promenade, and look in at the Old Market Hall (Vanha Kauppahalli) if it's still open. Don't force it — it's a stretch-your-legs night.",
-      "food": "Dinner near the hotel: Savotta (rustic Finnish, by the cathedral) or the hotel's own Krog Roba. Keep it simple.",
+      "food": "Dinner at Kappeli (Todd's pick) — the glass-pavilion restaurant on the Esplanadi, a Helsinki institution since 1867; a proper welcome-to-Finland glass of wine. Or keep it simple at the hotel's own Krog Roba, or Savotta by the cathedral.",
       "backup": "Rain: Esplanadi cafés, the Old Market Hall, or just the hotel bar. Jet-lagged is allowed.",
       "maps": [
         "Esplanadi Helsinki",
@@ -411,12 +411,16 @@ window.TRIP = {
           "Taxi/tram to Hotel Lilla Roberts; check in, shower, reset"
         ],
         [
-          "6:45 PM",
+          "6:30 PM",
           "Slow wander — Iso Roobertinkatu to the Esplanadi promenade"
         ],
         [
-          "7:45 PM",
-          "Easy dinner near the hotel (Savotta, or Krog Roba in-house)"
+          "7:00 PM",
+          "Dinner at Kappeli on the Esplanadi — glass pavilion, a glass of wine (Todd's pick)"
+        ],
+        [
+          "8:30 PM",
+          "Down to Market Square & the harbor — watch the ferries come and go"
         ],
         [
           "9:30 PM",
@@ -437,7 +441,7 @@ window.TRIP = {
       "sleep": "Hotel Telegraaf, Tallinn",
       "transport": "Tallink ferry Helsinki → Tallinn (~2 hrs)",
       "theme": "Cross the gulf and step into the medieval core.",
-      "morning": "Relaxed checkout from Lilla Roberts. Coffee, maybe a last look at Market Square, then to the West Terminal for the ferry.",
+      "morning": "A civilized last morning (Todd's plan): skip the hotel breakfast and walk to Fazer Café for coffee, a pastry, and the famous chocolate — sit, people-watch. Then to Oodi, Helsinki's Central Library, for an hour: it's not really about books, it's one of the coolest public buildings in Europe. A last wander through the Old Market Hall, then to the West Terminal for the ferry.",
       "afternoon": "Tallink ferry to Tallinn (~2 hours). Arrive, walk or short taxi to Hotel Telegraaf on Vene Street, check into your 4-night home.",
       "evening": "First Old Town drift: Town Hall Square, Pikk Street, Vene Street. Let the medieval streets do the work.",
       "reservation": "Hotel Telegraaf — 4 nights, conf. 93263159. BOOK the Tallink ferry in advance.",
@@ -445,6 +449,9 @@ window.TRIP = {
       "food": "Dinner in Old Town — Rataskaevu 16 (book ahead) or Lore Bistroo. A nightcap in the Telegraaf bar.",
       "backup": "Rough water or rain: ferries run regardless; just stay covered between terminal and hotel.",
       "maps": [
+        "Fazer Cafe Helsinki",
+        "Oodi Helsinki Central Library",
+        "Old Market Hall Helsinki",
         "Tallink West Terminal Helsinki",
         "Hotel Telegraaf Tallinn",
         "Town Hall Square Tallinn",
@@ -453,16 +460,20 @@ window.TRIP = {
       "dont_overplan": false,
       "schedule": [
         [
-          "8:30 AM",
-          "Breakfast at the hotel; relaxed checkout"
+          "8:15 AM",
+          "Checkout; walk to Fazer Café — coffee, chocolate, a pastry, people-watch"
         ],
         [
-          "10:00 AM",
-          "Last look at Market Square / Old Market Hall"
+          "9:00 AM",
+          "Oodi Central Library — an hour in one of Europe's best public buildings"
         ],
         [
-          "11:30 AM",
-          "To the West Terminal for the Tallink ferry"
+          "10:15 AM",
+          "A last wander through the Old Market Hall (Vanha Kauppahalli)"
+        ],
+        [
+          "11:00 AM",
+          "To the West Terminal (Länsiterminaali) for the Tallink ferry — leave a buffer"
         ],
         [
           "12:30 PM",
