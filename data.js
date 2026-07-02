@@ -191,7 +191,7 @@ window.TRIP = {
       "nearby_coffee": "Hotel's own Orangerie / bar; cafés around Doma laukums (Dome Square) a few minutes away.",
       "nearby_stumble": "Old Town lanes toward the Dome Cathedral and House of the Black Heads; Art Nouveau on Alberta & Elizabetes iela ~15 min walk.",
       "essentials": "Pharmacies (Aptieka — Mēness aptieka) and Rimi groceries nearby; ATMs around Old Town.",
-      "notes": "Verify parking before car pickup on Jul 16 — Old Town access is restricted; ask the hotel about its garage or a nearby lot.",
+      "notes": "You'll pick up the rental car Jul 14 and park it here through Jul 16 — confirm parking with the hotel ahead of time; Old Town access is restricted, so ask about its garage or a nearby lot.",
       "history": "A landmark 1877 building that began as a bank — the chandelier-lit lobby was once its banking hall — on Pils iela in the heart of Riga's Old Town. Today a 56-room five-star boutique, the only Latvian member of Small Luxury Hotels of the World, with interiors styled by Andrew Martin.",
       "style": "Restored 1877 historicist bank building with contemporary boutique interiors over a classical shell.",
       "restaurant": "Seasons Restaurant — MICHELIN-Guide fine dining with menus inspired by iconic artworks; breakfast in the Orangerie conservatory.",
@@ -246,33 +246,32 @@ window.TRIP = {
   "car": {
     "vendor": "EconomyBookings",
     "website": "https://www.economybookings.com/",
-    "booking_number": "B41497753",
+    "booking_number": "B95063884",
     "vehicle": "Volkswagen Polo Automatic (or similar economy)",
     "transmission": "Automatic",
     "seats": 5,
-    "luggage": 2,
+    "luggage": 1,
     "ac": true,
     "driver": "Michael Robson",
     "pickup": {
-      "date": "2026-07-16",
-      "time": "12:00 PM",
+      "date": "2026-07-14",
+      "time": "3:00 PM",
       "location": "Riga Airport (RIX)"
     },
     "dropoff_current": {
-      "date": "2026-07-21",
-      "time": "1:00 PM",
+      "date": "2026-07-19",
+      "time": "6:00 AM",
       "location": "Vilnius Airport (VNO)"
     },
-    "dropoff_should_be": "Jul 19 very early at VNO (before the 7:50 AM flight) OR Jul 18 evening at VNO + taxi to airport Jul 19.",
-    "cost_estimate": "Not shown on screenshot; Michael estimated ≈ USD 500–600.",
-    "status": "Confirmed — return date WRONG, must fix",
+    "cost": "USD 476.10 (paid)",
+    "status": "Confirmed — Jul 14, 3:00 PM (RIX) → Jul 19, 6:00 AM (VNO). Return now matches the 7:50 AM flight.",
     "open_items": [
-      "URGENT: Return date currently Jul 21 — flight departs Jul 19 at 7:50 AM. Change to Jul 19 early, or return Jul 18 evening.",
+      "CANCEL the old booking B41497753 (Jul 16→21) — this new B95063884 replaces it; don't get charged twice.",
+      "Jul 14 is a tight connection: the Lux Express bus lands at Riga Coach Station 2:35 PM; grab a Bolt straight to RIX for the 3:00 PM pickup (you'll arrive ~3:10–3:20 — rentals hold same-day).",
+      "Confirm Grand Palace (Riga Old Town) parking for the car Jul 14–16 — it's a restricted zone.",
       "Confirm cross-border driving Latvia → Lithuania is explicitly allowed/included.",
-      "Confirm one-way drop (RIX pickup → VNO return) is included in the quote.",
-      "Confirm automatic transmission in writing.",
-      "Check insurance deductible and whether a credit-card CDW applies in Latvia & Lithuania.",
-      "Confirm after-hours / early-morning return procedure at VNO."
+      "Confirm the one-way drop (RIX pickup → VNO return) is included in the quote.",
+      "Confirm the early/after-hours return at VNO at 6:00 AM (desk likely closed — find the key drop and photograph the car)."
     ]
   },
   "open_items": [
@@ -298,8 +297,8 @@ window.TRIP = {
     },
     {
       "priority": "high",
-      "text": "Book Tallinn → Riga transport (Lux Express bus) for Jul 14.",
-      "done": false
+      "text": "Tallinn → Riga Lux Express BOOKED for Jul 14 (depart 10:00, seats 47 & 48).",
+      "done": true
     },
     {
       "priority": "high",
@@ -681,17 +680,19 @@ window.TRIP = {
       "date_label": "Mon, Jul 14",
       "city": "Tallinn → Riga",
       "sleep": "Grand Palace Hotel, Riga",
-      "transport": "Lux Express bus Tallinn → Riga (~4.5 hrs)",
-      "theme": "Move south. Arrive into Riga's Old Town in the evening.",
-      "morning": "Checkout from Telegraaf. Coffee, last Old Town look, to the bus station (Tallinn Bus Station / Autobussijaam).",
-      "afternoon": "Lux Express to Riga (~4.5 hrs, comfortable coaches with wifi). Arrive, taxi to Grand Palace Hotel, settle in.",
+      "transport": "Lux Express bus Tallinn → Riga (10:00 → 2:35 PM), then rental car pickup at Riga Airport (RIX)",
+      "theme": "Move south. Arrive Riga mid-afternoon, grab the car, settle into Old Town.",
+      "morning": "Checkout from Telegraaf. Coffee, last Old Town look, to the Tallinn Coach Station (Autobussijaam) — bus leaves 10:00 sharp.",
+      "afternoon": "Lux Express to Riga: depart Tallinn Coach Station 10:00, arrive Riga Coach Station 2:35 PM (seats 47 & 48, booked). Then Bolt out to Riga Airport (RIX) to pick up the rental car (~3:00 PM, B95063884) and drive to Grand Palace Hotel to park for the Riga days.",
       "evening": "Loose Old Town drift. Riga Black Magic for the riding-bar-and-balsam ritual, the Grand Palace bar, an easy dinner.",
-      "reservation": "Grand Palace Hotel — 3 nights, conf. 48469SG014613. BOOK Lux Express in advance.",
+      "reservation": "Lux Express BOOKED — Michael seat 47, Grace seat 48, €20.70 each. Rental car pickup RIX ~3:00 PM (B95063884). Grand Palace Hotel — 3 nights, conf. 48469SG014613. Confirm hotel parking Jul 14–16.",
       "stumble": "Riga reveals itself slowly from the bus station toward Old Town — let the first cellar door you pass pull you in.",
       "food": "Riga Black Magic (atmosphere + Riga Black Balsam), Grand Palace bar, or a relaxed Old Town dinner. Keep it loose.",
       "backup": "If the bus is delayed, dinner plans flex — Old Town kitchens run late.",
       "maps": [
-        "Tallinn Bus Station",
+        "Tallinn Coach Station Autobussijaam",
+        "Riga Coach Station",
+        "Riga Airport RIX",
         "Grand Palace Hotel Riga",
         "Riga Black Magic",
         "Riga Old Town"
@@ -699,20 +700,28 @@ window.TRIP = {
       "dont_overplan": false,
       "schedule": [
         [
-          "8:30 AM",
+          "8:15 AM",
           "Breakfast; checkout from Telegraaf"
         ],
         [
+          "9:30 AM",
+          "To Tallinn Coach Station (Autobussijaam) — bus leaves 10:00 sharp"
+        ],
+        [
           "10:00 AM",
-          "To Tallinn Bus Station for Lux Express"
+          "Lux Express departs, Riga-bound (~4.5 hrs) — wifi, hot drinks, watch the forests"
         ],
         [
-          "10:30 AM",
-          "Coach to Riga (~4.5 hrs) — wifi, hot drinks, watch the forests"
+          "2:35 PM",
+          "Arrive Riga Coach Station (seats 47 & 48)"
         ],
         [
-          "3:30 PM",
-          "Arrive Riga; taxi to Grand Palace Hotel, settle in"
+          "3:00 PM",
+          "Bolt to Riga Airport (RIX); pick up rental car (B95063884)"
+        ],
+        [
+          "4:00 PM",
+          "Drive to Grand Palace Hotel, park, settle in"
         ],
         [
           "5:30 PM",
@@ -724,9 +733,9 @@ window.TRIP = {
         ]
       ],
       "notes": {
-        "michael": "Book Lux Express ahead and pick the comfort seats. Don't plan a hard evening — you'll arrive a little road-worn.",
+        "michael": "Tight hop: the bus lands at 2:35 and the car desk is a 15-min Bolt away at RIX. Don't stress the 3:00 — same-day rentals hold, just head straight out. Then park at the hotel and don't touch the car until you leave Riga.",
         "grace": null,
-        "together": "Riga reveals itself slowly from the bus station inward. Let the first cellar door you pass pull you in."
+        "together": "Riga reveals itself slowly from the coach station inward. Let the first cellar door you pass pull you in."
       }
     },
     {
@@ -798,17 +807,16 @@ window.TRIP = {
       "date_label": "Wed, Jul 16",
       "city": "Riga + countryside",
       "sleep": "Grand Palace Hotel (final Riga night)",
-      "transport": "Rental car from RIX 12:00 PM",
-      "theme": "Pick up the car at noon. One or two countryside stops — not a marathon.",
-      "morning": "Slow Riga morning. Taxi to Riga Airport (RIX) for the 12:00 PM car pickup. Inspect the car, photograph any damage, confirm cross-border + automatic in writing.",
-      "afternoon": "Drive into the Gauja valley: Turaida Castle (the red-brick tower over the river) and Sigulda. Cēsis only if time allows — don't force it from a noon start.",
+      "transport": "Rental car (already in hand since the 14th) — day trip to the Gauja valley",
+      "theme": "Car's already parked at the hotel — an easy morning start to the countryside, not a marathon.",
+      "morning": "Slow Riga morning, then collect the car from hotel parking and drive out. No airport run today — you picked it up on the 14th. (Good moment to re-photograph the car and confirm cross-border + automatic in writing if you haven't.)",
+      "afternoon": "Drive into the Gauja valley: Turaida Castle (the red-brick tower over the river) and Sigulda. With an early start Cēsis is in reach too — but don't force it.",
       "evening": "Back to Riga and the Grand Palace for your final Riga night. Park per the hotel's guidance.",
-      "reservation": "Car pickup confirmed (B41497753). Grand Palace night 3.",
+      "reservation": "Car already in hand (B95063884, picked up Jul 14). Grand Palace night 3.",
       "stumble": "Turaida and the Gauja overlooks are the 'beauty you stumble into' in countryside form — quiet, green, medieval.",
       "food": "A simple lunch in Sigulda; dinner back in Riga (Old Town, your pick).",
-      "backup": "If pickup runs late or weather turns, pick ONE stop (Turaida) and keep it relaxed. The car's real job starts tomorrow.",
+      "backup": "If weather turns, pick ONE stop (Turaida) and keep it relaxed. The car's real long-haul job starts tomorrow.",
       "maps": [
-        "Riga Airport RIX",
         "Turaida Castle",
         "Sigulda",
         "Gauja National Park",
@@ -817,32 +825,28 @@ window.TRIP = {
       "dont_overplan": true,
       "schedule": [
         [
-          "9:30 AM",
+          "9:00 AM",
           "Slow Riga morning; coffee"
         ],
         [
-          "11:15 AM",
-          "Taxi to Riga Airport (RIX)"
+          "10:00 AM",
+          "Collect the car from hotel parking; drive to the Gauja valley"
         ],
         [
-          "12:00 PM",
-          "Pick up the car — inspect, photograph, confirm cross-border + automatic in writing"
-        ],
-        [
-          "1:00 PM",
-          "Drive to the Gauja valley"
-        ],
-        [
-          "2:00 PM",
+          "11:00 AM",
           "Turaida Castle — climb the tower for the river view"
         ],
         [
-          "3:30 PM",
-          "Sigulda overlook (Cēsis only if you're full of energy)"
+          "12:30 PM",
+          "Lunch in Sigulda; the Gauja overlooks"
         ],
         [
-          "6:00 PM",
-          "Back to Riga; park per the hotel's guidance"
+          "2:30 PM",
+          "Cēsis if you've got the energy (optional)"
+        ],
+        [
+          "5:30 PM",
+          "Back to Riga; park at the hotel"
         ],
         [
           "7:30 PM",
@@ -850,7 +854,7 @@ window.TRIP = {
         ]
       ],
       "notes": {
-        "michael": "Noon pickup means ONE castle done well, not three rushed. Turaida + a Sigulda overlook is plenty. Photograph the car before you drive off.",
+        "michael": "Car's already yours, so you get a real morning start — Turaida + Sigulda done well, and Cēsis is reachable if the energy's there. Still, don't turn it into a marathon; the long drive is tomorrow.",
         "grace": "Turaida's red tower over the green Gauja valley is the countryside version of 'stumbling into beauty.' Linger at the top.",
         "together": "Don't make this a marathon. One castle, one overlook, home for a good dinner. The car's real day is tomorrow."
       }
@@ -1043,17 +1047,17 @@ window.TRIP = {
       "mode": "Bus",
       "vendor": "Lux Express",
       "website": "https://luxexpress.eu/",
-      "target": "Late morning",
-      "notes": "~4.5 hrs. Comfortable coaches (wifi, hot drinks). Easier than the train on this route. Private transfer is the alternative if you'd rather not bus."
+      "target": "Depart 10:00 (BOOKED, seats 47 & 48)",
+      "notes": "~4.5 hrs. Depart Tallinn Coach Station 10:00, arrive Riga Coach Station 2:35 PM. Comfortable coaches (wifi, hot drinks). €20.70 each."
     },
     {
-      "leg": "Riga Airport pickup",
-      "date": "2026-07-16",
+      "leg": "Riga Airport (RIX) car pickup",
+      "date": "2026-07-14",
       "mode": "Rental car",
-      "vendor": "EconomyBookings",
+      "vendor": "EconomyBookings (B95063884)",
       "website": "https://www.economybookings.com/",
-      "target": "12:00 PM",
-      "notes": "Taxi from Grand Palace to RIX. Inspect & photograph the car; confirm cross-border + automatic in writing."
+      "target": "~3:00 PM",
+      "notes": "Bolt from Riga Coach Station out to RIX right after the bus. Inspect & photograph the car; confirm cross-border + automatic in writing. Park at Grand Palace through Jul 16."
     },
     {
       "leg": "Riga → Sigulda/Turaida → Riga",
