@@ -264,15 +264,29 @@ window.TRIP = {
       "location": "Vilnius Airport (VNO)"
     },
     "cost": "USD 476.10 (paid)",
-    "status": "Confirmed — Jul 14, 3:00 PM (RIX) → Jul 19, 6:00 AM (VNO). Return now matches the 7:50 AM flight.",
+    "status": "Confirmed — Jul 14, 3:00 PM (RIX) → Jul 19, 6:00 AM (VNO). Automatic transmission; cross-border Latvia→Lithuania OK. Return matches the 7:50 AM flight.",
     "open_items": [
       "CANCEL the old booking B41497753 (Jul 16→21) — this new B95063884 replaces it; don't get charged twice.",
       "Jul 14 is a tight connection: the Lux Express bus lands at Riga Coach Station 2:35 PM; grab a Bolt straight to RIX for the 3:00 PM pickup (you'll arrive ~3:10–3:20 — rentals hold same-day).",
       "Confirm Grand Palace (Riga Old Town) parking for the car Jul 14–16 — it's a restricted zone.",
-      "Confirm cross-border driving Latvia → Lithuania is explicitly allowed/included.",
       "Confirm the one-way drop (RIX pickup → VNO return) is included in the quote.",
       "Confirm the early/after-hours return at VNO at 6:00 AM (desk likely closed — find the key drop and photograph the car)."
     ]
+  },
+  "bus": {
+    "operator": "Lux Express",
+    "website": "https://luxexpress.eu/",
+    "leg": "Tallinn → Riga",
+    "date": "2026-07-14",
+    "date_label": "Mon, Jul 14",
+    "depart_time": "10:00 AM",
+    "depart_location": "Tallinn Coach Station (Autobussijaam)",
+    "arrive_time": "2:35 PM",
+    "arrive_location": "Riga Coach Station",
+    "duration": "~4.5 hrs",
+    "seats": "47 & 48 (Michael 47, Grace 48)",
+    "cost": "€20.70 each (~€41 total)",
+    "status": "Confirmed"
   },
   "open_items": [
     {
@@ -302,7 +316,7 @@ window.TRIP = {
     },
     {
       "priority": "high",
-      "text": "Confirm car rental includes cross-border Latvia→Lithuania and one-way drop-off.",
+      "text": "Confirm the one-way drop-off (RIX → VNO) is included in the car quote. (Cross-border LV→LT confirmed OK; car is automatic.)",
       "done": false
     },
     {
@@ -1679,6 +1693,34 @@ window.TRIP = {
     "Parking in Riga and Vilnius Old Towns."
   ],
   "photos": {
+    "trip_porvoo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Porvoo_Old_Town_%2859%29_%2836291141740%29.jpg/1280px-Porvoo_Old_Town_%2859%29_%2836291141740%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Porvoo_Old_Town_(59)_(36291141740).jpg",
+      "credit": "Richard Mortel from Riyadh, Saudi Arabia",
+      "license": "CC BY 2.0",
+      "filename": "File:Porvoo Old Town (59) (36291141740).jpg"
+    },
+    "trip_lahemaa": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Viru_Bog%2C_Parque_Nacional_Lahemaa%2C_Estonia%2C_2012-08-12%2C_DD_60.JPG/1280px-Viru_Bog%2C_Parque_Nacional_Lahemaa%2C_Estonia%2C_2012-08-12%2C_DD_60.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Viru_Bog,_Parque_Nacional_Lahemaa,_Estonia,_2012-08-12,_DD_60.JPG",
+      "credit": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "filename": "File:Viru Bog, Parque Nacional Lahemaa, Estonia, 2012-08-12, DD 60.JPG"
+    },
+    "trip_rundale": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Italian_room_of_Rund%C4%81le_Palace.jpg/1280px-Italian_room_of_Rund%C4%81le_Palace.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Italian_room_of_Rund%C4%81le_Palace.jpg",
+      "credit": "Pierre André Leclercq",
+      "license": "CC BY-SA 4.0",
+      "filename": "File:Italian room of Rundāle Palace.jpg"
+    },
+    "trip_kernave": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kernave_Mounds%2C_Lithuania%2C_2008.jpg/1280px-Kernave_Mounds%2C_Lithuania%2C_2008.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kernave_Mounds,_Lithuania,_2008.jpg",
+      "credit": "Phillip Capper",
+      "license": "CC BY 2.0",
+      "filename": "File:Kernave Mounds, Lithuania, 2008.jpg"
+    },
     "city_helsinki": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Senate_Square_-_Senaatintori_-_Senatstorget%2C_Helsinki%2C_Finland.jpg/1280px-Senate_Square_-_Senaatintori_-_Senatstorget%2C_Helsinki%2C_Finland.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Senate_Square_-_Senaatintori_-_Senatstorget,_Helsinki,_Finland.jpg",

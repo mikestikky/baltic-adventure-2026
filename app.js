@@ -67,17 +67,18 @@
 
   // -- SUMMARY ----------------------------------------------------------
   (function summary() {
-    var f = T.flights, h = T.hotels, c = T.car;
+    var f = T.flights, h = T.hotels, c = T.car, b = T.bus;
     var flightRows = f.map(function (x) {
       return "<li><b>" + esc(x.flight) + "</b> · " + esc(x.from) + " → " + esc(x.to) + " · " + esc(x.date_label) + " " + esc(x.depart) + "</li>";
     }).join("");
     var hotelRows = h.map(function (x) {
-      return "<li><b>" + esc(x.city) + "</b> — " + site(x.website, x.name) + " · " + esc(x.checkin.slice(5)) + "→" + esc(x.checkout.slice(5)) + " (" + x.nights + "n) · " + esc(x.cost) + "</li>";
+      return "<li><b>" + esc(x.city) + "</b> — " + site(x.website, x.name) + " · " + esc(x.checkin.slice(5)) + "→" + esc(x.checkout.slice(5)) + " (" + x.nights + "n) · " + esc(x.cost) + " " + statusBadge(x.status) + "</li>";
     }).join("");
     el("summary-cards").innerHTML =
       '<div class="card"><h4>✈ Flights</h4><p><small>Air France booking ref <b>' + esc(T.meta.booking_ref) + "</b></small></p><ul>" + flightRows + "</ul></div>" +
-      '<div class="card"><h4>🏨 Hotels</h4><ul>' + hotelRows + "</ul></div>" +
-      '<div class="card"><h4>🚗 Rental car</h4><p>' + site(c.website, c.vendor) + " · booking <b>" + esc(c.booking_number) + "</b><br>" + esc(c.vehicle) + "<br>Pickup " + esc(c.pickup.location) + " · " + esc(c.pickup.date.slice(5)) + " " + esc(c.pickup.time) + '<br><span class="badge b-crit">Return date must be fixed → Jul 19</span></p></div>' +
+      '<div class="card"><h4>🏨 Hotels</h4><p><small>All four confirmed</small></p><ul>' + hotelRows + "</ul></div>" +
+      '<div class="card"><h4>🚌 Coach — ' + site(b.website, b.operator) + '</h4><p>' + esc(b.leg) + " · " + esc(b.date_label) + "<br>" + esc(b.depart_time) + " " + esc(b.depart_location) + "<br>→ " + esc(b.arrive_time) + " " + esc(b.arrive_location) + " (" + esc(b.duration) + ")<br>Seats " + esc(b.seats) + " · " + esc(b.cost) + " " + statusBadge(b.status) + "</p></div>" +
+      '<div class="card"><h4>🚗 Rental car</h4><p>' + site(c.website, c.vendor) + " · booking <b>" + esc(c.booking_number) + "</b><br>" + esc(c.vehicle) + "<br>Pickup " + esc(c.pickup.location) + " · " + esc(c.pickup.date.slice(5)) + " " + esc(c.pickup.time) + "<br>Drop-off " + esc(c.dropoff_current.location) + " · " + esc(c.dropoff_current.date.slice(5)) + " " + esc(c.dropoff_current.time) + "<br>" + esc(c.cost) + " " + statusBadge("Confirmed") + "</p></div>" +
       '<div class="card"><h4>🧭 Route &amp; rhythm</h4><p>' + esc(T.meta.route) + '</p><p><small>Eleven nights, twelve dates · ' + esc(T.meta.theme) + "</small></p></div>";
     renderMustFix();
   })();
@@ -132,8 +133,9 @@
     var rows = [];
     rows.push(["Flights", "Jul 8–9 / 19", "—", "Air France / Delta / KLM", T.meta.booking_ref, "SLC·CDG·HEL · VNO·AMS·SLC", "", "https://www.airfrance.com", T.ticket.total_cost + " (Michael)", "Confirmed", "Grace's ticket unconfirmed", null]);
     T.hotels.forEach(function (x) { rows.push(["Hotel", x.checkin.slice(5) + "→" + x.checkout.slice(5), x.city, x.name, x.confirmation, x.address, x.phone, x.website, x.cost, x.status, x.notes, x.address + " " + x.city]); });
-    var c = T.car;
-    rows.push(["Rental car", c.pickup.date.slice(5) + "→ (fix to Jul 19)", "Riga→Vilnius", c.vendor, c.booking_number, c.pickup.location + " → " + c.dropoff_current.location, "", c.website, c.cost_estimate, c.status, "Return date Jul 21 is WRONG", c.pickup.location]);
+    var c = T.car, bus = T.bus;
+    rows.push(["Coach", bus.date.slice(5), "Tallinn→Riga", bus.operator, "Seats " + bus.seats.split("(")[0].trim(), bus.depart_location + " → " + bus.arrive_location, "", bus.website, bus.cost, bus.status, bus.depart_time + " → " + bus.arrive_time + " (" + bus.duration + ")", bus.depart_location]);
+    rows.push(["Rental car", c.pickup.date.slice(5) + "→" + c.dropoff_current.date.slice(5), "Riga→Vilnius", c.vendor, c.booking_number, c.pickup.location + " → " + c.dropoff_current.location, "", c.website, c.cost, "Confirmed", "Jul 14 3:00 PM → Jul 19 6:00 AM", c.pickup.location]);
     var head = ["Category", "Date", "City", "Vendor", "Conf #", "Address", "Phone", "Website", "Cost", "Status", "Notes"];
     var thead = "<tr>" + head.map(function (h) { return "<th>" + h + "</th>"; }).join("") + "</tr>";
     var tbody = rows.map(function (r) {
@@ -161,8 +163,146 @@
     el("route-cards").innerHTML = segs.map(function (s) {
       return '<div class="card tight"><div class="section-eyebrow">' + esc(s[0]) + '</div><h4 style="margin:.2rem 0">' + esc(s[1]) + "</h4><p><small>" + esc(s[2]) + "</small></p></div>";
     }).join("");
-    if (el("route-overview-map")) el("route-overview-map").innerHTML = mapEmbed("Baltic states Helsinki Tallinn Riga Vilnius", "The whole loop");
+    if (el("route-overview-map")) el("route-overview-map").innerHTML = storyMap();
   })();
+
+  // -- STORY MAP (self-contained SVG: countries · cities · excursions) ---
+  function storyMap() {
+    // pixel coords ~ lon/lat projected (west→east = x, north→south = y)
+    var cities = [
+      { name: "Helsinki", x: 344, y: 105, sub: "Jul 9 · arrive", lx: 12, anc: "start" },
+      { name: "Tallinn",  x: 325, y: 181, sub: "Jul 10–14 · 4 nights", lx: 12, anc: "start" },
+      { name: "Riga",     x: 261, y: 442, sub: "Jul 14–17 · 3 nights", lx: -12, anc: "end" },
+      { name: "Vilnius",  x: 378, y: 679, sub: "Jul 17–19 · 2 nights", lx: 12, anc: "start" }
+    ];
+    var excur = [
+      { name: "Sigulda · Turaida", x: 335, y: 420, lx: 12, anc: "start" },
+      { name: "Cēsis", x: 377, y: 400, lx: 12, anc: "start" },
+      { name: "Hill of Crosses", x: 182, y: 549, lx: -10, anc: "end" },
+      { name: "Trakai", x: 343, y: 690, lx: -10, anc: "end" }
+    ];
+    // "possible" optional day-trips (hollow rings) — one iconic option per city
+    var poss = [
+      { name: "Porvoo", x: 416, y: 84, lx: 8, anc: "start" },
+      { name: "Lahemaa NP", x: 432, y: 176, lx: 8, anc: "start" },
+      { name: "Rundāle Palace", x: 252, y: 499, lx: -8, anc: "end" },
+      { name: "Kernavė", x: 332, y: 658, lx: -8, anc: "end" }
+    ];
+    var countries = [
+      { t: "FINLAND", x: 360, y: 58 }, { t: "ESTONIA", x: 432, y: 248 },
+      { t: "LATVIA", x: 460, y: 468 }, { t: "LITHUANIA", x: 432, y: 640 }
+    ];
+    var seas = [
+      { t: "Gulf of Finland", x: 172, y: 150 }, { t: "Baltic", x: 90, y: 358 },
+      { t: "Sea", x: 90, y: 376 }, { t: "Gulf of Riga", x: 148, y: 470 }
+    ];
+    function node(n, cls, r) {
+      var tx = n.x + n.lx;
+      return '<circle cx="' + n.x + '" cy="' + n.y + '" r="' + r + '" class="' + cls + '"/>' +
+        '<text x="' + tx + '" y="' + (n.y - 1) + '" text-anchor="' + n.anc + '" class="lbl-' + cls + '">' + esc(n.name) + "</text>" +
+        (n.sub ? '<text x="' + tx + '" y="' + (n.y + 13) + '" text-anchor="' + n.anc + '" class="lbl-sub">' + esc(n.sub) + "</text>" : "");
+    }
+    return '<svg viewBox="0 0 560 780" width="100%" preserveAspectRatio="xMidYMid meet" ' +
+      'style="max-width:540px;display:block;margin:0 auto;height:auto;background:#faf8f2;border-radius:12px" ' +
+      'role="img" aria-label="Route map: Helsinki, Tallinn, Riga, Vilnius with planned and possible day-trips">' +
+      '<style>' +
+      '.lbl-city{font:700 15px system-ui,sans-serif;fill:#2c2a26}' +
+      '.lbl-exc{font:600 12px system-ui,sans-serif;fill:#8a5a12}' +
+      '.lbl-poss{font:italic 11px system-ui,sans-serif;fill:#a5824a}' +
+      '.lbl-sub{font:400 11px system-ui,sans-serif;fill:#8a8578}' +
+      '.exc{fill:#d99a2b;stroke:#fff;stroke-width:1.5}' +
+      '.poss{fill:#faf8f2;stroke:#d99a2b;stroke-width:1.8}' +
+      '.city{fill:#b5532a;stroke:#fff;stroke-width:2}' +
+      '</style>' +
+      '<text x="280" y="32" text-anchor="middle" style="font:700 16px Georgia,serif;fill:#2c2a26">The Journey — north to south</text>' +
+      countries.map(function (c) { return '<text x="' + c.x + '" y="' + c.y + '" text-anchor="middle" style="font:700 16px system-ui,sans-serif;fill:#cabfa8;letter-spacing:4px">' + c.t + "</text>"; }).join("") +
+      seas.map(function (s) { return '<text x="' + s.x + '" y="' + s.y + '" text-anchor="middle" style="font:italic 12px Georgia,serif;fill:#8fa9c2">' + s.t + "</text>"; }).join("") +
+      // legs
+      '<path d="M344,105 L325,181" fill="none" stroke="#3b6ea5" stroke-width="3.5" stroke-dasharray="2 6" stroke-linecap="round"/>' +
+      '<path d="M325,181 L261,442" fill="none" stroke="#b5532a" stroke-width="3.5" stroke-linecap="round"/>' +
+      '<path d="M261,442 L182,549 L378,679" fill="none" stroke="#b5532a" stroke-width="3.5" stroke-linecap="round"/>' +
+      '<path d="M261,442 L335,420 M261,442 L377,400 M378,679 L343,690" fill="none" stroke="#d99a2b" stroke-width="1.6" stroke-dasharray="1 4" stroke-linecap="round"/>' +
+      // leg mode labels
+      '<text x="318" y="145" text-anchor="end" style="font:600 12px system-ui;fill:#3b6ea5">⛴ Ferry · Jul 10 · to book</text>' +
+      '<text x="286" y="318" text-anchor="end" style="font:600 12px system-ui;fill:#b5532a">🚌 Coach · Jul 14</text>' +
+      '<text x="214" y="600" text-anchor="end" style="font:600 12px system-ui;fill:#b5532a">🚗 Car · Jul 16–19</text>' +
+      poss.map(function (n) { return node(n, "poss", 4); }).join("") +
+      excur.map(function (n) { return node(n, "exc", 4.5); }).join("") +
+      cities.map(function (n) { return node(n, "city", 7); }).join("") +
+      // legend
+      '<g transform="translate(28,724)" style="font:400 10.5px system-ui;fill:#6b6a63">' +
+      '<circle cx="6" cy="-3" r="6" fill="#b5532a" stroke="#fff" stroke-width="1.5"/><text x="17" y="1">City / overnight</text>' +
+      '<circle cx="120" cy="-3" r="4" fill="#d99a2b" stroke="#fff" stroke-width="1.5"/><text x="130" y="1">Day-trip</text>' +
+      '<circle cx="190" cy="-3" r="4" fill="#faf8f2" stroke="#d99a2b" stroke-width="1.8"/><text x="200" y="1">Possible</text>' +
+      '<line x1="2" y1="15" x2="26" y2="15" stroke="#3b6ea5" stroke-width="3" stroke-dasharray="2 5"/><text x="32" y="18">Ferry</text>' +
+      '<line x1="84" y1="15" x2="108" y2="15" stroke="#b5532a" stroke-width="3.5"/><text x="114" y="18">Coach / car (road)</text>' +
+      "</g>" +
+      "</svg>";
+  }
+
+  // -- CITY PANEL (food + day-trips woven into the day you arrive) -------
+  var CASTLE_BASE = {
+    "Turaida Castle": "Riga", "Sigulda": "Riga", "Gauja National Park": "Riga", "Cēsis": "Riga",
+    "Trakai Castle": "Vilnius", "Hill of Crosses": "Vilnius"
+  };
+  // optional day-trips — surfaced as "also possible" with a photo when available
+  var POSSIBLE_TRIPS = {
+    "Helsinki": [{ name: "Porvoo", photo_key: "trip_porvoo", drive: "~50 min from Helsinki", why: "Finland's storybook second-oldest town — red-ochre riverside warehouses and cobbled lanes." }],
+    "Tallinn": [{ name: "Lahemaa National Park", photo_key: "trip_lahemaa", drive: "~1 hr from Tallinn", why: "Estonia's largest national park — bog boardwalks, manor houses, and a wild Baltic coast." }],
+    "Riga": [{ name: "Rundāle Palace", photo_key: "trip_rundale", drive: "~1 hr from Riga", why: "The 'Baltic Versailles' — a rococo palace and formal gardens south of Riga." }],
+    "Vilnius": [{ name: "Kernavė", photo_key: "trip_kernave", drive: "~40 min from Vilnius", why: "UNESCO hill-fort mounds on the Neris — Lithuania's ancient first capital." }]
+  };
+  function clip(s, n) { s = String(s == null ? "" : s); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, "") + "…" : s; }
+  function cityPanel(city) {
+    var pls = (T.places || []).filter(function (p) { return p.city === city; });
+    var cs = (T.castles || []).filter(function (c) { return CASTLE_BASE[c.name] === city; });
+    var pos = POSSIBLE_TRIPS[city] || [];
+    if (!pls.length && !cs.length && !pos.length) return "";
+    var food = pls.map(function (p) {
+      var name = p.website ? site(p.website, p.name) : "<b>" + esc(p.name) + "</b>";
+      var res = /yes|recommend|eve/i.test(p.reserve || "") ? '<span class="cp-badge cp-res">reserve</span>' : "";
+      var meta = esc([p.type, p.tag].filter(Boolean).join(" / ")) + (p.cost_band ? " · " + esc(p.cost_band) : "");
+      var desc = clip(p.signature || p.why, 92);
+      return '<div class="cp-chip"><div class="cp-row">' + name + res + '</div><div class="cp-meta">' + meta + "</div>" + (desc ? "<p>" + esc(desc) + "</p>" : "") + "</div>";
+    }).join("");
+    var trips = cs.map(function (c) {
+      var thumb = c.photo_key ? photo(c.photo_key, "cp-thumb") : "";
+      var when = c.timing ? '<span class="cp-badge cp-day">' + esc(clip(c.timing.split("·")[0].split(",")[0], 16)) + "</span>" : "";
+      var meta = esc([c.drive, c.duration].filter(Boolean).join(" · "));
+      return '<div class="cp-chip cp-castle">' + thumb + '<div class="cp-row"><b>' + esc(c.name) + "</b>" + when + '</div><div class="cp-meta">' + meta + "</div>" + (c.why ? "<p>" + esc(clip(c.why, 96)) + "</p>" : "") + "</div>";
+    }).join("");
+    var possibles = pos.map(function (t) {
+      var thumb = t.photo_key ? photo(t.photo_key, "cp-thumb") : "";
+      return '<div class="cp-chip cp-poss">' + thumb + '<div class="cp-row"><b>' + esc(t.name) + '</b><span class="cp-badge cp-maybe">possible</span></div><div class="cp-meta">' + esc(t.drive || "") + "</div>" + (t.why ? "<p>" + esc(clip(t.why, 100)) + "</p>" : "") + "</div>";
+    }).join("");
+    return '<div class="city-panel">' +
+      '<div class="cp-head">🧭 In ' + esc(city) + "</div>" +
+      (food ? '<div class="cp-sect"><h5>🍽 Eat &amp; drink</h5><div class="cp-grid">' + food + "</div></div>" : "") +
+      (trips ? '<div class="cp-sect"><h5>🏰 Day-trips from ' + esc(city) + '</h5><div class="cp-grid">' + trips + "</div></div>" : "") +
+      (possibles ? '<div class="cp-sect"><h5>✦ Also possible</h5><div class="cp-grid">' + possibles + "</div></div>" : "") +
+      "</div>";
+  }
+  var CP_STYLE = '<style>' +
+    '.city-panel{background:#fbf9f3;border:1px solid #e7e1d3;border-left:3px solid #b5532a;border-radius:10px;padding:12px 14px;margin-top:14px}' +
+    '.cp-head{font-weight:700;font-size:15px;margin-bottom:8px;color:#2c2a26}' +
+    '.cp-sect{margin-top:8px}' +
+    '.cp-sect h5{margin:6px 0;font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:#8a5a12}' +
+    '.cp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}' +
+    '@media(max-width:560px){.cp-grid{grid-template-columns:1fr}}' +
+    '.cp-chip{background:#fff;border:1px solid #ece6d8;border-radius:8px;padding:8px 10px}' +
+    '.cp-castle{border-left:3px solid #d99a2b}' +
+    '.cp-row{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:13px}' +
+    '.cp-meta{font-size:11px;color:#8a8578;margin:1px 0 4px}' +
+    '.cp-chip p{margin:0;font-size:12px;line-height:1.35;color:#4a473f}' +
+    '.cp-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}' +
+    '.cp-res{background:#fbeee0;color:#a5551a}' +
+    '.cp-day{background:#fdf2d6;color:#8a6410}' +
+    '.cp-poss{border-left:3px solid #cbbfa8}' +
+    '.cp-maybe{background:#eef0e8;color:#6e7355}' +
+    '.cp-chip .ph.cp-thumb{margin:0 0 6px}' +
+    '.cp-chip .ph.cp-thumb img{width:100%;height:92px;object-fit:cover;border-radius:6px;display:block}' +
+    '.cp-chip .ph.cp-thumb figcaption{font-size:9px;color:#b3ad9f;margin-top:2px;line-height:1.2}' +
+    '</style>';
 
   // -- DAY BY DAY -------------------------------------------------------
   (function days() {
@@ -170,9 +310,11 @@
     var html = T.days.map(function (d) {
       // city hero photo on the first day we reach a new city
       var cityName = (d.city || "").split("→").pop().trim().split(" ")[0];
-      var hero = "";
+      var firstInCity = cityName && !seenCity[cityName];
+      if (firstInCity) seenCity[cityName] = 1;
       var ck = T.city_photos && T.city_photos[cityName];
-      if (ck && !seenCity[cityName]) { seenCity[cityName] = 1; hero = photo(ck, "hero"); }
+      var hero = (firstInCity && ck) ? photo(ck, "hero") : "";
+      var cityRef = firstInCity ? cityPanel(cityName) : "";
 
       var slots = "";
       [["Morning", d.morning], ["Afternoon", d.afternoon], ["Evening", d.evening]].forEach(function (s) {
@@ -206,10 +348,10 @@
           (d.food ? '<div class="note-line"><b>Food &amp; café:</b> ' + esc(d.food) + "</div>" : "") +
           (d.backup ? '<div class="note-line"><b>Backup / rain:</b> ' + esc(d.backup) + "</div>" : "") +
           (d.dont_overplan ? '<div class="dont">🌿 Do not over-plan this day.</div>' : "") +
-          reminders + maps +
+          reminders + maps + cityRef +
         "</div></div>";
     }).join("");
-    el("days").innerHTML = html;
+    el("days").innerHTML = CP_STYLE + html;
   })();
 
   // -- HOTELS (deep pages) ---------------------------------------------
